@@ -1,0 +1,44 @@
+{
+  "name": "cna-canvas-manager-backend",
+  "version": "1.1.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": ">=4.16.1",
+    "npm": ">=6.14.12"
+  },
+  "scripts": {
+    "start": "nodemon index.js",
+    "installBackend": "npm install",
+    "start-client": "cd client && npm start",
+    "build-client": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MohamedAbdallahBedj/cna-canvas-manager-backend.git"
+  },
+  "author": "Mohamed Abdallah BEDJEGHA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MohamedAbdallahBedj/cna-canvas-manager-backend/issues"
+  },
+  "homepage": "https://github.com/MohamedAbdallahBedj/cna-canvas-manager-backend#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "connect-pg-simple": "^9.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.18.0",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.7.1",
+    "pg-format": "^1.0.4"
+  },
+  "overrides": {
+    "semver": "^7.5.3"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "body": {
+    "emptyDataSourceMessage": "Vide",
+    "addTooltip": "Ajouter",
+    "deleteTooltip": "Supprimer",
+    "editTooltip": "Modifier",
+    "filterRow": {
+      "filterTooltip": "Filtrer"
+    },
+    "editRow": {
+      "deleteText": "Êtes-vous sûr de vouloir supprimer cette ligne ?",
+      "cancelTooltip": "Annuler",
+      "saveTooltip": "Enregistrer"
+    }
+  },
+  "pagination": {
+    "firstAriaLabel": "Première page",
+    "firstTooltip": "Première page",
+    "previousAriaLabel": "Précedent",
+    "previousTooltip": "Précedent",
+    "nextAriaLabel": "Suivant",
+    "nextTooltip": "Suivant",
+    "lastAriaLabel": "Dernière Page",
+    "lastTooltip": "Dernière page",
+    "labelDisplayedRows": "{from}-{to} De {count}",
+    "labelRowsPerPage": "Lignes par page",
+    "labelRows": "Lignes"
+  },
+  "toolbar": {
+    "searchTooltip": "Recherche",
+    "searchPlaceholder": "Recherche",
+    "exportTitle": "Exporter"
+  },
+  "grouping": {
+    "placeholder": "Faites Glisser les en-Têtes ici Pour Regrouper",
+    "groupedBy": "Grouper Par"
+  },
+  "header": {
+    "actions": "Modifier/Supprimer"
+  }
+}

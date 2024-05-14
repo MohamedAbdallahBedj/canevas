@@ -1,0 +1,41 @@
+{
+  "body": {
+    "emptyDataSourceMessage": "فارغ",
+    "addTooltip": "إضافة",
+    "deleteTooltip": "حذف",
+    "editTooltip": "تعديل",
+    "filterRow": {
+      "filterTooltip": "تصفية"
+    },
+    "editRow": {
+      "deleteText": "هل أنت متأكد من حذف هذا السطر ؟",
+      "cancelTooltip": "إلغاء",
+      "saveTooltip": "حفظ"
+    }
+  },
+  "pagination": {
+    "firstAriaLabel": "الصفحة الأولى",
+    "firstTooltip": "الصفحة الأولي",
+    "previousAriaLabel": "السابق",
+    "previousTooltip": "السابق",
+    "nextAriaLabel": "التالي",
+    "nextTooltip": "التالي",
+    "lastAriaLabel": "الصفحة الأخيرة",
+    "lastTooltip": "الصفحة الأخيرة",
+    "labelDisplayedRows": "{from}-{to} من {count}",
+    "labelRowsPerPage": "الأسطر في صفحة",
+    "labelRows": "أسطر"
+  },
+  "toolbar": {
+    "searchTooltip": "بحث",
+    "searchPlaceholder": "بحث",
+    "exportTitle": "تصدير"
+  },
+  "grouping": {
+    "placeholder": "إسحب الخانات الرئيسية للتجميع",
+    "groupedBy": "تجميع حسب"
+  },
+  "header": {
+    "actions": "تعديل/حذف"
+  }
+}

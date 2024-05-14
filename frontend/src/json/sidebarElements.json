@@ -1,0 +1,393 @@
+[
+  {
+    "divider": true,
+    "labelFr": "Accueil",
+    "labelAr": "الرئيسية",
+    "access": [
+      "UtilisateurTechnique",
+      "UtilisateurFinance",
+      "AdminGenerale",
+      "AdminPV",
+      "AdminPA",
+      "AdminDOP",
+      "AdminVul",
+      "AdminCom",
+      "AdminPVR",
+      "AdminFR",
+      "AdminFinance",
+      "AdminCarte",
+      "AdminRH"
+    ]
+  },
+  {
+    "textFr": "Accueil",
+    "textAr": "الرئيسية",
+    "url": "/",
+    "access": [
+      "UtilisateurTechnique",
+      "UtilisateurFinance",
+      "AdminGenerale",
+      "AdminPV",
+      "AdminPA",
+      "AdminDOP",
+      "AdminVul",
+      "AdminCom",
+      "AdminPVR",
+      "AdminFR",
+      "AdminFinance",
+      "AdminCarte",
+      "AdminRH"
+    ]
+  },
+  {
+    "divider": true,
+    "labelFr": "Production Végétale",
+    "labelAr": "إنتاج نباتي",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPV", "AdminPA"]
+  },
+  {
+    "textFr": "Céréales",
+    "textAr": "حبوب",
+    "url": "/cereales",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPV", "AdminPA"]
+  },
+  {
+    "textFr": "Pomme de terre",
+    "textAr": "بطاطا",
+    "url": "/pomme-de-terre",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPV"]
+  },
+  {
+    "textFr": "Agrumes",
+    "textAr": "حمضيات",
+    "url": "/agrumes",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPV"]
+  },
+  {
+    "textFr": "Olives",
+    "textAr": "زيتون",
+    "url": "/olives",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPV"]
+  },
+  {
+    "textFr": "Dattes",
+    "textAr": "تمور",
+    "url": "/dattes",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPV"]
+  },
+  {
+    "textFr": "Plasticulture",
+    "textAr": "زراعة بلاستيكية",
+    "url": "/plasticulture",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPV"]
+  },
+  {
+    "textFr": "Ail",
+    "textAr": "ثوم",
+    "url": "/ail",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPV"]
+  },
+  {
+    "textFr": "Oignon",
+    "textAr": "بصل",
+    "url": "/oignon",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPV"]
+  },
+  {
+    "textFr": "Colza",
+    "textAr": "سلجم زيتي",
+    "url": "/colza",
+    "access": ["AdminGenerale", "AdminPV"]
+  },
+  {
+    "textFr": "Mais",
+    "textAr": "ذرة",
+    "url": "/mais",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPV", "AdminPA"]
+  },
+  {
+    "textFr": "Legumes-secs",
+    "textAr": "الحبوب الجافة",
+    "url": "/legumes-secs",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPV", "AdminPA"]
+  },
+  {
+    "textFr": "Tomate industrielle",
+    "textAr": "طماطم صناعية",
+    "url": "/tomate-industrielle",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPV"]
+  },
+  {
+    "textFr": "Bettrave sucrière",
+    "textAr": "شمندر سكري",
+    "url": "/bettrave-sucriere",
+    "new": true,
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPV"]
+  },
+  {
+    "textFr": "Tournesol",
+    "textAr": "دوار الشمس",
+    "url": "/tournesol",
+    "new": true,
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPV"]
+  },
+  {
+    "textFr": "PAM et huiles essentielles",
+    "textAr": "نباتات عطرية و طبية و زيوت أساسية",
+    "url": "/pam-huiles-essentielles",
+    "new": true,
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPV"]
+  },
+  {
+    "textFr": "Irrigation d'appoint",
+    "textAr": "ري تكميلي",
+    "url": "/irrigation-appoint",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPV"]
+  },
+  {
+    "textFr": "Chambres froides",
+    "textAr": "غرف باردة",
+    "url": "/chambres-froides-DPV",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPV"]
+  },
+  {
+    "textFr": "Autres Canevas",
+    "textAr": "جداول أخرى",
+    "url": "/autres-canevas",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPV"]
+  },
+  {
+    "divider": true,
+    "labelFr": "Production Animale",
+    "labelAr": "إنتاج حيواني",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPA"]
+  },
+  {
+    "textFr": "Filières Animales",
+    "textAr": "الشعب الحيوانية",
+    "url": "/filieres-animales",
+    "new": true,
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPA"]
+  },
+  {
+    "textFr": "Abbatoirs et Tueries",
+    "textAr": "مسالخ و مذابح",
+    "url": "/abbatoirs-et-tueries",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPA"]
+  },
+  {
+    "textFr": "Campagne de Vaccination",
+    "textAr": "حملة التلقيح",
+    "url": "/campagne-de-vaccination",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPA"]
+  },
+  {
+    "textFr": "Chambres Froides d'Origine Animale",
+    "textAr": "غرف باردة ذات أصل حيواني",
+    "url": "/chambres-froides-origine-animale",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPA"]
+  },
+  {
+    "textFr": "Evolution de la production animale",
+    "textAr": "تطور الإنتاج الحيواني",
+    "url": "/evolution-production-animale",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPA"]
+  },
+  {
+    "textFr": "Évolution des effectifs de betails",
+    "textAr": "تطور تعداد المواشي",
+    "url": "/evolution-effectif-animale-betail",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPA"]
+  },
+  {
+    "textFr": "Aviculture et petites elevages",
+    "textAr": "الدواجن و الحيوانات الصغيرة",
+    "url": "/evolution-effectif-animale-petites-elevage",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPA"]
+  },
+  {
+    "textFr": "Identification des Eleveurs",
+    "textAr": "تحديد المربيين",
+    "url": "/identification-eleveurs",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPA"]
+  },
+  {
+    "textFr": "Indentification des Producteurs",
+    "textAr": "تحديد المنتجين",
+    "url": "/indentification-producteurs",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPA"]
+  },
+  {
+    "textFr": "Cultures fourragères",
+    "textAr": "محاصيل علفية",
+    "url": "/cultures-fourrageres",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPA"]
+  },
+  {
+    "divider": true,
+    "labelFr": "Vulgarisation et Activités",
+    "labelAr": "إرشاد و أنشطة",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminVul"]
+  },
+  {
+    "textFr": "Vulgarisation et Formation",
+    "textAr": "إرشاد و تكوين",
+    "url": "/vulgarisation",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminVul"]
+  },
+  {
+    "textFr": "Evaluation d'activités",
+    "textAr": "تقييم الأنشطة",
+    "url": "/activites",
+    "new": true,
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminVul"]
+  },
+  {
+    "divider": true,
+    "labelFr": "Communication",
+    "labelAr": "تواصل",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminCom"]
+  },
+  {
+    "textFr": "Communication",
+    "textAr": "تواصل",
+    "url": "/communication",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminCom"]
+  },
+  {
+    "divider": true,
+    "labelFr": "Comptabilité / Finances",
+    "labelAr": "المحاسبة / المالية",
+    "access": ["UtilisateurFinance", "AdminGenerale", "AdminFinance"]
+  },
+  {
+    "textFr": "Budget prévisionnel",
+    "textAr": "الميزانية التقديرية",
+    "url": "/budget",
+    "new": true,
+    "access": ["UtilisateurFinance", "AdminGenerale", "AdminFinance"]
+  },
+  {
+    "divider": true,
+    "labelFr": "Associations et Cooperatives",
+    "labelAr": "جمعيات و تعاونيات",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminDOP"]
+  },
+  {
+    "textFr": "Associations et Cooperatives",
+    "textAr": "جمعيات و تعاونيات",
+    "url": "/associations-cooperatives",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminDOP"]
+  },
+  {
+    "textFr": "Associations et Cooperatives (Autres Canevas)",
+    "textAr": "جمعيات و تعاونيات (جداول أخرى)",
+    "url": "/associations-cooperatives-autres",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminDOP"]
+  },
+  {
+    "textFr": "Conseils d'administration",
+    "textAr": "مجالس الإدارة",
+    "url": "/conseils-administration",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminDOP"]
+  },
+  {
+    "divider": true,
+    "labelFr": "Cartes Fellah",
+    "labelAr": "بطاقات الفلاح",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminCarte"]
+  },
+  {
+    "textFr": "Cartes Fellah",
+    "textAr": "بطاقات الفلاح",
+    "url": "/cartes-fellah",
+    "new": true,
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminCarte"]
+  },
+  {
+    "divider": true,
+    "labelFr": "Ressources Humaines",
+    "labelAr": "موارد بشرية",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminRH"]
+  },
+  {
+    "textFr": "Bilan d'emploi",
+    "textAr": "حصيلة التوظيف",
+    "url": "/bilan-emploi",
+    "new": true,
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminRH"]
+  },
+  {
+    "divider": true,
+    "labelFr": "Mercuriale des prix",
+    "labelAr": "متابعة الأسعار",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPA", "AdminPV"]
+  },
+  {
+    "textFr": "Mercuriale des prix",
+    "textAr": "متابعة الأسعار",
+    "url": "/brq",
+    "new": true,
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPA", "AdminPV"]
+  },
+  {
+    "divider": true,
+    "labelFr": "Points de Vente",
+    "labelAr": "نقاط البيع",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPVR"]
+  },
+  {
+    "textFr": "Points de Vente du Ramadhan",
+    "textAr": "نقاط البيع لشهر رمضان",
+    "url": "/points-vente-ramadhan",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPVR"]
+  },
+  {
+    "textFr": "Nouveau point de vente",
+    "textAr": "نقطة بيع جديدة",
+    "url": "/points-vente-ramadhan/nouveau",
+    "hidden": true,
+    "access": ["UtilisateurTechnique"]
+  },
+  {
+    "textFr": "Modifier un point de vente",
+    "textAr": "تعديل معلومات نقطة البيع",
+    "url": "/points-vente-ramadhan/modifier",
+    "hidden": true,
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPVR"]
+  },
+  {
+    "divider": true,
+    "labelFr": "Femme Rurale",
+    "labelAr": "المرأة الريفية",
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminFR"]
+  },
+  {
+    "textFr": "Femme Rurale",
+    "textAr": "المرأة الريفية",
+    "url": "/femme-rurale",
+    "new": true,
+    "access": ["UtilisateurTechnique", "AdminGenerale", "AdminFR"]
+  },
+  {
+    "textFr": "Parametres",
+    "textAr": "إعدادات",
+    "url": "/parametres",
+    "hidden": true,
+    "access": [
+      "UtilisateurTechnique",
+      "UtilisateurFinance",
+      "AdminGenerale",
+      "AdminPV",
+      "AdminPA",
+      "AdminDOP",
+      "AdminVul",
+      "AdminCom",
+      "AdminPVR",
+      "AdminFR",
+      "AdminFinance",
+      "AdminCarte",
+      "AdminRH"
+    ]
+  }
+]
