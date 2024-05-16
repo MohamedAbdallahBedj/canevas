@@ -1,1 +1,1 @@
-# cna-canvas-manager-backend
+# Plateforme de gestion de canevas et de suivi
