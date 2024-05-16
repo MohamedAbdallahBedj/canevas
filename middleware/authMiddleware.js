@@ -1,5 +1,4 @@
 const pool = require("../db");
-const { logger } = require("../utils/logger");
 
 //this middleware will continue only if the request has a valid session attached to it.
 const isAuthorized = async (req, res, next) => {
@@ -46,7 +45,7 @@ const measureRequestDuration = (req, res, next) => {
     const start = Date.now();
     res.once('finish', () => {
         const duration = Date.now() - start;
-        logger.log("Time taken to process " + req.originalUrl + " is: " +
+        console.log("Time taken to process " + req.originalUrl + " is: " +
             duration);
     });
     next();

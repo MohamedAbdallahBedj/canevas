@@ -5,7 +5,6 @@ var multer = require('multer');
 const { checkFileType } = require("../utils/exports");
 var path = require('path');
 const fs = require('fs');
-const { logger } = require("../utils/logger");
 
 
 const storage = multer.diskStorage({
@@ -56,11 +55,11 @@ router.get("/table", isAuthorized, async (req, res) => {
         const rows = await pool.query(queryTxt);
         res.json(rows.rows);
     } catch (err) {
-        logger.error('Time: ' + new Date().toLocaleString());
-        logger.error('User: ' + JSON.stringify(req.nomUtilisateur));
-        logger.error('Route: ' + req.originalUrl);
-        logger.error('Error Content: ' + err.message);
-        logger.error("---------------------------------------------------------------");
+        console.error('Time: ' + new Date().toLocaleString());
+        console.error('User: ' + JSON.stringify(req.nomUtilisateur));
+        console.error('Route: ' + req.originalUrl);
+        console.error('Error Content: ' + err.message);
+        console.error("---------------------------------------------------------------");
         res.status(500).send("Server error");
     }finally{
         }
@@ -88,11 +87,11 @@ router.post("/add", isAuthorized, upload.single('fichier'), async (req, res) => 
         const rows = await pool.query(queryTxt, values);
         res.json(rows.rows);
     } catch (err) {
-        logger.error('Time: ' + new Date().toLocaleString());
-        logger.error('User: ' + JSON.stringify(req.nomUtilisateur));
-        logger.error('Route: ' + req.originalUrl);
-        logger.error('Error Content: ' + err.message);
-        logger.error("---------------------------------------------------------------");
+        console.error('Time: ' + new Date().toLocaleString());
+        console.error('User: ' + JSON.stringify(req.nomUtilisateur));
+        console.error('Route: ' + req.originalUrl);
+        console.error('Error Content: ' + err.message);
+        console.error("---------------------------------------------------------------");
         res.status(500).send("Server error");
     }finally{
         }
@@ -144,11 +143,11 @@ router.post("/edit", isAuthorized, upload.single('fichier'), async (req, res) =>
         const queryRes = await pool.query(updateQuery, values);
         res.json(queryRes.rowCount);
     } catch (err) {
-        logger.error('Time: ' + new Date().toLocaleString());
-        logger.error('User: ' + JSON.stringify(req.nomUtilisateur));
-        logger.error('Route: ' + req.originalUrl);
-        logger.error('Error Content: ' + err.message);
-        logger.error("---------------------------------------------------------------");
+        console.error('Time: ' + new Date().toLocaleString());
+        console.error('User: ' + JSON.stringify(req.nomUtilisateur));
+        console.error('Route: ' + req.originalUrl);
+        console.error('Error Content: ' + err.message);
+        console.error("---------------------------------------------------------------");
         res.status(500).send("Server error");
     }finally{
         }
@@ -176,11 +175,11 @@ router.delete("/delete/:id", isAuthorized, async (req, res) => {
         // Executing the SQL query
         res.json(rows[0]);
     } catch (err) {
-        logger.error('Time: ' + new Date().toLocaleString());
-        logger.error('User: ' + JSON.stringify(req.nomUtilisateur));
-        logger.error('Route: ' + req.originalUrl);
-        logger.error('Error Content: ' + err.message);
-        logger.error("---------------------------------------------------------------");
+        console.error('Time: ' + new Date().toLocaleString());
+        console.error('User: ' + JSON.stringify(req.nomUtilisateur));
+        console.error('Route: ' + req.originalUrl);
+        console.error('Error Content: ' + err.message);
+        console.error("---------------------------------------------------------------");
         res.status(500).send("Server error");
     }finally{
         }

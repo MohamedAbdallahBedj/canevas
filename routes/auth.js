@@ -3,7 +3,6 @@ const router = require("express").Router(); // Initialize Express router
 const pool = require("../db"); // Database connection pool
 const bcrypt = require('bcryptjs'); // Library for password hashing
 const { isAuthorized, checkRole } = require("../middleware/authMiddleware"); // Custom middleware for user authorization
-const { logger } = require("../utils/logger");
 
 // Function to check if an email is valid
 const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -32,10 +31,10 @@ router.post('/login', async (req, res) => {
     }
   } catch (error) {
     await pool.query('ROLLBACK') // Rollback any ongoing database transactions
-    logger.error('Time: ' + new Date().toLocaleString());
-    logger.error('Route: ' + req.originalUrl);
-    logger.error('Error Content: ' + error.message);
-    logger.error("---------------------------------------------------------------");
+    console.error('Time: ' + new Date().toLocaleString());
+    console.error('Route: ' + req.originalUrl);
+    console.error('Error Content: ' + error.message);
+    console.error("---------------------------------------------------------------");
     res.status(500).send("Server error");
   } finally {
   }
@@ -62,10 +61,10 @@ router.post('/register', isAuthorized, checkRole("AdminGenerale"), async (req, r
     res.status(201).send('Utilisateur enregistré avec succés.');
   } catch (error) {
     await pool.query('ROLLBACK') // Rollback any ongoing database transactions
-    logger.error('Time: ' + new Date().toLocaleString());
-    logger.error('Route: ' + req.originalUrl);
-    logger.error('Error Content: ' + error.message);
-    logger.error("---------------------------------------------------------------");
+    console.error('Time: ' + new Date().toLocaleString());
+    console.error('Route: ' + req.originalUrl);
+    console.error('Error Content: ' + error.message);
+    console.error("---------------------------------------------------------------");
     res.status(500).send("Server error");
   } finally {
   }
@@ -96,10 +95,10 @@ router.post('/password', isAuthorized, async (req, res) => {
     }
   } catch (error) {
     await pool.query('ROLLBACK') // Rollback any ongoing database transactions
-    logger.error('Time: ' + new Date().toLocaleString());
-    logger.error('Route: ' + req.originalUrl);
-    logger.error('Error Content: ' + error.message);
-    logger.error("---------------------------------------------------------------");
+    console.error('Time: ' + new Date().toLocaleString());
+    console.error('Route: ' + req.originalUrl);
+    console.error('Error Content: ' + error.message);
+    console.error("---------------------------------------------------------------");
     res.status(500).send("Server error");
   } finally {
   }
@@ -110,10 +109,10 @@ router.post("/verify", isAuthorized, async (req, res) => {
   try {
     res.status(200).json({ nomUtilisateur: req.nomUtilisateur, role: req.role, idWilaya: req.id }); // Return the user's authorized data
   } catch (err) {
-    logger.error('Time: ' + new Date().toLocaleString());
-    logger.error('Route: ' + req.originalUrl);
-    logger.error('Error Content: ' + err.message);
-    logger.error("---------------------------------------------------------------");
+    console.error('Time: ' + new Date().toLocaleString());
+    console.error('Route: ' + req.originalUrl);
+    console.error('Error Content: ' + err.message);
+    console.error("---------------------------------------------------------------");
     res.status(500).send("Server error");
   }
 });
@@ -124,10 +123,10 @@ router.get("/logout", isAuthorized, async (req, res) => {
     req.session.destroy(); // Destroy the user's session for logout
     return res.status(200).send();
   } catch (err) {
-    logger.error('Time: ' + new Date().toLocaleString());
-    logger.error('Route: ' + req.originalUrl);
-    logger.error('Error Content: ' + err.message);
-    logger.error("---------------------------------------------------------------");
+    console.error('Time: ' + new Date().toLocaleString());
+    console.error('Route: ' + req.originalUrl);
+    console.error('Error Content: ' + err.message);
+    console.error("---------------------------------------------------------------");
     res.status(500).send("Server error");
   }
 });

@@ -31,12 +31,12 @@ exports.sendMail = () => {
 
     mail.sendMail(mailOptions, function (error, info) {
         if (error) {
-            logger.error('sendMail Error: ' + new Date() + ' ' + error);
-            logger.error("---------------------------------------------------------------");
+            console.error('sendMail Error: ' + new Date() + ' ' + error);
+            console.error("---------------------------------------------------------------");
 
         } else {
             fs.createWriteStream('./logs/stdActLog.log');
-            logger.log('Email sent: ' + new Date() + ' ' + info.response);
+            console.log('Email sent: ' + new Date() + ' ' + info.response);
         }
     });
 }

@@ -1,15 +1,13 @@
 const express = require("express");
-if (process.env.NODE_ENV !== "production") require('dotenv').config();
+require('dotenv').config();
 const cors = require("cors");
 const path = require("path");
 const session = require('express-session');
 const pgSession = require('connect-pg-simple')(session);
 const pool = require("./db");
-const { logger } = require("./utils/logger");
-const { measureRequestDuration } = require("./middleware/authMiddleware");
 const app = express();
 
-const PORT = 3001;
+const PORT = 3000;
 global.__basedir = __dirname;
 
 //middleware
@@ -36,7 +34,6 @@ app.use(session({
         maxAge: 1000 * 60 * 60 * 4 // 4 Hours
     }
 }))
-app.use(measureRequestDuration);
 
 app.use("/api/uploads", express.static(__dirname + '/uploads'));
 app.use("/api/auth", require("./routes/auth"));
@@ -81,15 +78,6 @@ app.use("/api/cartes-fellah", require("./routes/cartes-fellah"))
 app.use("/api/bilan-emploi", require("./routes/bilan-emploi"))
 app.use("/api/brq", require("./routes/brq"))
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, 'build')));
-    app.listen();
-} else {
-    app.listen(PORT, () => {
-        logger.log('App is running on port ' + PORT);
-    })
-}
+app.listen(PORT, () => {
+    console.log('App is running on port ' + PORT);
+})

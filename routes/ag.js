@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const pool = require("../db");
 const { isAuthorized } = require("../middleware/authMiddleware");
-const { logger } = require("../utils/logger");
 
 // _____________________________________________________________________________
 
@@ -37,11 +36,11 @@ router.get("/table", isAuthorized, async (req, res) => {
         })
         res.json(rows_);
     } catch (err) {
-        logger.error('Time: ' + new Date().toLocaleString());
-        logger.error('User: ' + JSON.stringify(req.nomUtilisateur));
-        logger.error('Route: ' + req.originalUrl);
-        logger.error('Error Content: ' + err.message);
-        logger.error("---------------------------------------------------------------");
+        console.error('Time: ' + new Date().toLocaleString());
+        console.error('User: ' + JSON.stringify(req.nomUtilisateur));
+        console.error('Route: ' + req.originalUrl);
+        console.error('Error Content: ' + err.message);
+        console.error("---------------------------------------------------------------");
         res.status(500).send("Server error");
     }finally{
         }
@@ -70,11 +69,11 @@ router.post("/add", isAuthorized, async (req, res) => {
         }
         res.json(rows.rows[0].id);
     } catch (err) {
-        logger.error('Time: ' + new Date().toLocaleString());
-        logger.error('User: ' + JSON.stringify(req.nomUtilisateur));
-        logger.error('Route: ' + req.originalUrl);
-        logger.error('Error Content: ' + err.message);
-        logger.error("---------------------------------------------------------------");
+        console.error('Time: ' + new Date().toLocaleString());
+        console.error('User: ' + JSON.stringify(req.nomUtilisateur));
+        console.error('Route: ' + req.originalUrl);
+        console.error('Error Content: ' + err.message);
+        console.error("---------------------------------------------------------------");
         res.status(500).send("Server error");
     }finally{
         }
@@ -108,11 +107,11 @@ router.post("/edit", async (req, res) => {
         const row = await pool.query(updateQuery, values);
         res.json(row.rowCount);
     } catch (err) {
-        logger.error('Time: ' + new Date().toLocaleString());
-        logger.error('User: ' + JSON.stringify(req.nomUtilisateur));
-        logger.error('Route: ' + req.originalUrl);
-        logger.error('Error Content: ' + err.message);
-        logger.error("---------------------------------------------------------------");
+        console.error('Time: ' + new Date().toLocaleString());
+        console.error('User: ' + JSON.stringify(req.nomUtilisateur));
+        console.error('Route: ' + req.originalUrl);
+        console.error('Error Content: ' + err.message);
+        console.error("---------------------------------------------------------------");
         res.status(500).send("Server error");
     }finally{
         }
@@ -134,11 +133,11 @@ router.delete("/delete/:id", async (req, res) => {
         const row = await pool.query(deleteQuery, [id]);
         res.json(row.rowCount);
     } catch (err) {
-        logger.error('Time: ' + new Date().toLocaleString());
-        logger.error('User: ' + JSON.stringify(req.nomUtilisateur));
-        logger.error('Route: ' + req.originalUrl);
-        logger.error('Error Content: ' + err.message);
-        logger.error("---------------------------------------------------------------");
+        console.error('Time: ' + new Date().toLocaleString());
+        console.error('User: ' + JSON.stringify(req.nomUtilisateur));
+        console.error('Route: ' + req.originalUrl);
+        console.error('Error Content: ' + err.message);
+        console.error("---------------------------------------------------------------");
         res.status(500).send("Server error");
     }finally{
         }
