@@ -184,37 +184,12 @@ const Affiliation = ({ campagne, data = [], refetch, loading = false }) => {
     {
       ...baseColumn,
       field: "produits",
-      title: t("Produits Agricoles Transformés (Alimentaires et Animales)"),
+      title: t("Productions Agro-Industrielles"),
     },
     {
       ...baseColumn,
       field: "localisation",
       title: t("Localisation Géographique de l'activité  GPS"),
-    },
-
-    {
-      ...baseColumn,
-      field: "projetsProximites",
-      type: "boolean",
-      initialEditValue: false,
-      title: t("Projets de proximités"),
-    },
-    {
-      ...baseColumn,
-      field: "programmesAppui",
-      type: "boolean",
-      initialEditValue: false,
-      title: t("Programmes d'appui Nationale et Internationale"),
-    },
-    {
-      ...baseColumn,
-      field: "programmesRenforcements",
-      type: "boolean",
-
-      initialEditValue: false,
-      title: t(
-        "Programme de renforcement des capacités et d'assistance technique"
-      ),
     },
     {
       ...baseColumn,
@@ -232,13 +207,18 @@ const Affiliation = ({ campagne, data = [], refetch, loading = false }) => {
     },
     {
       ...baseColumn,
-      field: "source",
-      title: t("Sources d'informations"),
+      field: "preoccupations",
+      title: t("Préoccupations de la Femme Agricultrice"),
     },
     {
       ...baseColumn,
-      field: "observation",
-      title: t("Observation"),
+      field: "intervention",
+      title: t("Intervention de la Profession Agricole"),
+    },
+    {
+      ...baseColumn,
+      field: "realisations",
+      title: t("Réalisations"),
     },
     {
       ...baseColumn,

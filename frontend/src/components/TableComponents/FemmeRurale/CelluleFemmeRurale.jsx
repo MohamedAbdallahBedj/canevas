@@ -147,7 +147,7 @@ const CelluleFemmeRurale = ({ data = [], refetch, loading = false }) => {
     {
       ...baseColumn,
       field: "planAction",
-      title: t("Plan d'action Proposé"),
+      title: t("Plan d'action (cellule de la chambre d'agriculture) pour la femme rurale"),
       editComponent: (props) => (
         <TextField
           sx={{ fontSize: 8, minWidth: 300 }}
