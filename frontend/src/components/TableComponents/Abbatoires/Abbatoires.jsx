@@ -128,6 +128,13 @@ const Abbatoires = ({ data = [], refetch, loading = false }) => {
       field: "addresse",
       title: t("Adresse"),
     },
+    {
+      ...baseColumn,
+      field: "date",
+      title: t("Date"),
+      type: "date",
+      initialEditValue: new Date(),
+    },
     { ...baseColumn, field: "observation", title: t("Observation") },
   ];
   if (id !== 59)
@@ -245,17 +252,20 @@ const Abbatoires = ({ data = [], refetch, loading = false }) => {
                   }),
                 onRowDelete: (oldData) =>
                   new Promise((resolve, reject) => {
-                    fetch("/api/abbatoirs-et-tueries/delete/" + oldData.idAbbatoir, {
-                      method: "delete",
-                      credentials: "include",
-                      headers: {
-                        "Content-Type": "application/json",
-                      },
-                      body: JSON.stringify({
-                        tablename: "abbatoirs",
-                        idCol: "idAbbatoir",
-                      }),
-                    })
+                    fetch(
+                      "/api/abbatoirs-et-tueries/delete/" + oldData.idAbbatoir,
+                      {
+                        method: "delete",
+                        credentials: "include",
+                        headers: {
+                          "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                          tablename: "abbatoirs",
+                          idCol: "idAbbatoir",
+                        }),
+                      }
+                    )
                       .then((response) => {
                         if (!response.ok) {
                           reject();

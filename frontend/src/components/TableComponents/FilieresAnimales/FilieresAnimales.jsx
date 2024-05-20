@@ -147,6 +147,13 @@ const FilieresAnimales = ({ data = [], refetch, loading = false }) => {
       type: "boolean",
       initialEditValue: false,
     },
+    {
+      ...baseColumn,
+      field: "date",
+      title: t("Date"),
+      type: "date",
+      initialEditValue: new Date(),
+    },
     { ...baseColumn, field: "observation", title: t("Observation") },
   ];
   if (id !== 59)

@@ -1,13 +1,19 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import AuthContext from "../../../context/AuthContext";
-import MaterialTable from "@material-table/core";
+import MaterialTable, { MTableHeader } from "@material-table/core";
 import localizationFR from "../../../json/localizationFR.json";
 import localizationAR from "../../../json/localizationAR.json";
 import { toast } from "react-toastify";
 import excel from "../../../exports/excel";
 import { hasNullableValues, isObjectContained } from "../../../exports/divers";
-import { Button, IconButton } from "@mui/material";
+import {
+  Button,
+  IconButton,
+  TableCell,
+  TableHead,
+  TableRow,
+} from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
@@ -115,13 +121,15 @@ const Affiliation = ({ campagne, data = [], refetch, loading = false }) => {
     },
     {
       ...baseColumn,
-      field: "nom",
-      title: t("Nom"),
+      field: "prenom",
+      title: t("Prénom"),
+      groupTitle: t("Présentation de la femme agricultrice") + ": ",
     },
     {
       ...baseColumn,
-      field: "prenom",
-      title: t("Prénom"),
+      field: "nom",
+      title: t("Nom"),
+      groupTitle: t("Présentation de la femme agricultrice") + ": ",
     },
     {
       ...baseColumn,
@@ -129,21 +137,31 @@ const Affiliation = ({ campagne, data = [], refetch, loading = false }) => {
       title: t("Date de naissance"),
       type: "date",
       initialEditValue: new Date(),
+      groupTitle: t("Présentation de la femme agricultrice") + ": ",
     },
     {
       ...baseColumn,
       field: "telephone",
       title: t("Téléphone"),
+      groupTitle: t("Présentation de la femme agricultrice") + ": ",
     },
     {
       ...baseColumn,
       field: "daira",
       title: t("Daira"),
+      groupTitle: t("Adresse de l'activité") + ": ",
     },
     {
       ...baseColumn,
       field: "commune",
       title: t("Commune"),
+      groupTitle: t("Adresse de l'activité") + ": ",
+    },
+    {
+      ...baseColumn,
+      field: "village",
+      title: t("Village"),
+      groupTitle: t("Adresse de l'activité") + ": ",
     },
     {
       ...baseColumn,
@@ -155,41 +173,73 @@ const Affiliation = ({ campagne, data = [], refetch, loading = false }) => {
       ...baseColumn,
       field: "numeroNational",
       title: t("Numéro nationale"),
+      groupTitle:
+        t(
+          "Présentation des activités de la femme agricultrice et de sa localisation géographique"
+        ) + ": ",
     },
     {
       ...baseColumn,
       field: "codeActivite",
       title: t("Code d'Activité"),
+      groupTitle:
+        t(
+          "Présentation des activités de la femme agricultrice et de sa localisation géographique"
+        ) + ": ",
     },
     {
       ...baseColumn,
       field: "activite",
       title: t("Activité Principale "),
+      groupTitle:
+        t(
+          "Présentation des activités de la femme agricultrice et de sa localisation géographique"
+        ) + ": ",
     },
     {
       ...baseColumn,
       field: "activiteFiliere",
       title: t("Filière d'activité principale"),
+      groupTitle:
+        t(
+          "Présentation des activités de la femme agricultrice et de sa localisation géographique"
+        ) + ": ",
     },
     {
       ...baseColumn,
       field: "activiteSecondaire",
       title: t("Activité Secondaire"),
+      groupTitle:
+        t(
+          "Présentation des activités de la femme agricultrice et de sa localisation géographique"
+        ) + ": ",
     },
     {
       ...baseColumn,
       field: "activiteSecondaireFiliere",
       title: t("Filière d'activité Secondaire"),
+      groupTitle:
+        t(
+          "Présentation des activités de la femme agricultrice et de sa localisation géographique"
+        ) + ": ",
     },
     {
       ...baseColumn,
       field: "produits",
       title: t("Productions Agro-Industrielles"),
+      groupTitle:
+        t(
+          "Présentation des activités de la femme agricultrice et de sa localisation géographique"
+        ) + ": ",
     },
     {
       ...baseColumn,
       field: "localisation",
       title: t("Localisation Géographique de l'activité  GPS"),
+      groupTitle:
+        t(
+          "Présentation des activités de la femme agricultrice et de sa localisation géographique"
+        ) + ": ",
     },
     {
       ...baseColumn,
@@ -197,6 +247,7 @@ const Affiliation = ({ campagne, data = [], refetch, loading = false }) => {
       type: "boolean",
       initialEditValue: false,
       title: t("Mouvement Associatif"),
+      groupTitle: t("Niveau d'organisation de la femme agricultrice") + ": ",
     },
     {
       ...baseColumn,
@@ -204,21 +255,31 @@ const Affiliation = ({ campagne, data = [], refetch, loading = false }) => {
       type: "boolean",
       initialEditValue: false,
       title: t("Mouvement Coopératif"),
+      groupTitle: t("Niveau d'organisation de la femme agricultrice") + ": ",
     },
     {
       ...baseColumn,
       field: "preoccupations",
       title: t("Préoccupations de la Femme Agricultrice"),
+      groupTitle:
+        t(
+          "Préoccupations de la femme agricultrice et soutien à la profession agricole"
+        ) + ": ",
     },
     {
       ...baseColumn,
       field: "intervention",
       title: t("Intervention de la Profession Agricole"),
+      groupTitle:
+        t(
+          "Préoccupations de la femme agricultrice et soutien à la profession agricole"
+        ) + ": ",
     },
     {
       ...baseColumn,
       field: "realisations",
       title: t("Réalisations"),
+      groupTitle: t("Femme Agricultrice Leader") + ": ",
     },
     {
       ...baseColumn,
@@ -230,7 +291,8 @@ const Affiliation = ({ campagne, data = [], refetch, loading = false }) => {
     {
       ...baseColumn,
       field: "fichier",
-      title: t("Pièces jointes"),
+      title: t("Fiche Technique"),
+      groupTitle: t("Fichier joint") + ": ",
       initialEditValue: null,
       render: (props) => {
         if (props.fichier)
@@ -271,6 +333,74 @@ const Affiliation = ({ campagne, data = [], refetch, loading = false }) => {
   if (id !== 59)
     columns = columns.filter((column) => column.field !== "idWilaya");
 
+  const CustomHeader = (props) => {
+    let tableCells = [
+      { text: "", sx: {}, colSpan: 1 },
+      {
+        text: t("Présentation de la femme agricultrice"),
+        sx: { textAlign: "center", backgroundColor: "#d3d3d3" },
+        colSpan: 4,
+      },
+      {
+        text: t("Adresse de l'activité"),
+        sx: { textAlign: "center", backgroundColor: "#e6e6e6" },
+        colSpan: 3,
+      },
+      { text: "", sx: {}, colSpan: 1 },
+
+      {
+        text: t(
+          "Présentation des activités de la femme agricultrice et de sa localisation géographique"
+        ),
+        sx: { textAlign: "center", backgroundColor: "#e6e6e6" },
+        colSpan: 8,
+      },
+      {
+        text: t("Niveau d'organisation de la femme agricultrice"),
+        sx: { textAlign: "center", backgroundColor: "#d3d3d3" },
+        colSpan: 2,
+      },
+      {
+        text: t(
+          "Préoccupations de la femme agricultrice et soutien à la profession agricole"
+        ),
+        sx: { textAlign: "center", backgroundColor: "#e6e6e6" },
+        colSpan: 2,
+      },
+      {
+        text: t("Femme Agricultrice Leader"),
+        sx: { textAlign: "center", backgroundColor: "#d3d3d3" },
+        colSpan: 1,
+      },
+      { text: "", sx: {}, colSpan: 1 },
+      {
+        text: t("Fichier joint"),
+        sx: { textAlign: "center", backgroundColor: "#e6e6e6" },
+        colSpan: 1,
+      },
+      { text: "", sx: {}, colSpan: 1 },
+    ];
+    if (id !== 59) tableCells.shift();
+    else tableCells.pop();
+    return (
+      <>
+        <TableHead>
+          <TableRow>
+            {tableCells.map((cell, index) => (
+              <TableCell
+                sx={cell.sx}
+                colSpan={cell.colSpan}
+                key={`TableCell ${index}`}
+              >
+                {cell.text}
+              </TableCell>
+            ))}
+          </TableRow>
+        </TableHead>
+        <MTableHeader {...props} />
+      </>
+    );
+  };
   return (
     <>
       <MaterialTable
@@ -430,6 +560,9 @@ const Affiliation = ({ campagne, data = [], refetch, loading = false }) => {
             : localizationAR
         }
         style={{ paddingInlineEnd: 20 }}
+        components={{
+          Header: CustomHeader,
+        }}
       />
     </>
   );

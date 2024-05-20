@@ -11,7 +11,8 @@ import { hasNullableValues, isObjectContained } from "../../../exports/divers";
 const AC = ({ campagne, data = [], refetch, loading = false }) => {
   const { t } = useTranslation();
   const { user } = React.useContext(AuthContext);
-  const { idWilaya: id } = user;  const fileName = t("Anti Clavelée");
+  const { idWilaya: id } = user;
+  const fileName = t("Anti Clavelée");
   const nombreDeLookup = {
     1: t("Doses Recues"),
     2: t("Sujets Vaccines Ovins"),
@@ -114,6 +115,13 @@ const AC = ({ campagne, data = [], refetch, loading = false }) => {
     },
     {
       ...baseColumn,
+      field: "date",
+      title: t("Date"),
+      type: "date",
+      initialEditValue: new Date(),
+    },
+    {
+      ...baseColumn,
       field: "observation",
       title: t("Observation"),
     },
@@ -165,7 +173,7 @@ const AC = ({ campagne, data = [], refetch, loading = false }) => {
                     if (hasNullableValues(newData)) return reject();
                     fetch("/api/campagne-de-vaccination/add", {
                       method: "post",
-                      credentials: 'include',
+                      credentials: "include",
                       headers: {
                         "Content-Type": "application/json",
                       },
@@ -201,7 +209,7 @@ const AC = ({ campagne, data = [], refetch, loading = false }) => {
                     const { idVaccination, tableData, ...properties } = newData;
                     fetch("/api/campagne-de-vaccination/edit", {
                       method: "post",
-                      credentials: 'include',
+                      credentials: "include",
                       headers: {
                         "Content-Type": "application/json",
                       },
@@ -234,17 +242,21 @@ const AC = ({ campagne, data = [], refetch, loading = false }) => {
                   }),
                 onRowDelete: (oldData) =>
                   new Promise((resolve, reject) => {
-                    fetch("/api/campagne-de-vaccination/delete/" + oldData.idVaccination, {
-                      method: "delete",
-                      credentials: 'include',
-                      headers: {
-                        "Content-Type": "application/json",
-                      },
-                      body: JSON.stringify({
-                        tablename: "campagneVaccinationAC",
-                        idCol: "idVaccination",
-                      }),
-                    })
+                    fetch(
+                      "/api/campagne-de-vaccination/delete/" +
+                        oldData.idVaccination,
+                      {
+                        method: "delete",
+                        credentials: "include",
+                        headers: {
+                          "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                          tablename: "campagneVaccinationAC",
+                          idCol: "idVaccination",
+                        }),
+                      }
+                    )
                       .then((response) => {
                         if (!response.ok) {
                           reject();

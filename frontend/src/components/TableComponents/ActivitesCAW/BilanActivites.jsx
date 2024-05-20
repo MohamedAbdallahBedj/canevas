@@ -184,7 +184,7 @@ const BilanActivites = ({ campagne, data = [], refetch, loading = false }) => {
     {
       ...baseColumn,
       field: "intitule",
-      title: t("Intitulé"),
+      title: t("Intitulé_"),
       groupTitle: t("Déroulement de l'activité") + ": ",
     },
     {
@@ -196,7 +196,7 @@ const BilanActivites = ({ campagne, data = [], refetch, loading = false }) => {
     {
       ...baseColumn,
       field: "lieu",
-      title: t("Lieu"),
+      title: t("Lieu_"),
       groupTitle: t("Déroulement de l'activité") + ": ",
     },
     {

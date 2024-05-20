@@ -17,7 +17,8 @@ const ProductionAnimale = ({
   const entries = campagnes.map((item, index) => [index + 1, item]);
   const { t } = useTranslation();
   const { user } = React.useContext(AuthContext);
-  const { idWilaya: id } = user;  const fileName = t("Evolution de la production animale");
+  const { idWilaya: id } = user;
+  const fileName = t("Evolution de la production animale");
   const idWilayaLookup = {
     1: t("Adrar"),
     2: t("Chlef"),
@@ -135,6 +136,13 @@ const ProductionAnimale = ({
       title: t("Oeufs (10³ Unités)"),
       type: "numeric",
     },
+    {
+      ...baseColumn,
+      field: "date",
+      title: t("Date"),
+      type: "date",
+      initialEditValue: new Date(),
+    },
   ];
   if (id !== 59)
     columns = columns.filter((column) => column.field !== "idWilaya");
@@ -177,7 +185,7 @@ const ProductionAnimale = ({
                     if (hasNullableValues(newData)) return reject();
                     fetch("/api/evolution-production-animale/add", {
                       method: "post",
-                      credentials: 'include',
+                      credentials: "include",
                       headers: {
                         "Content-Type": "application/json",
                       },
@@ -213,7 +221,7 @@ const ProductionAnimale = ({
                     const { idProduction, tableData, ...properties } = newData;
                     fetch("/api/evolution-production-animale/edit", {
                       method: "post",
-                      credentials: 'include',
+                      credentials: "include",
                       headers: {
                         "Content-Type": "application/json",
                       },
@@ -246,17 +254,21 @@ const ProductionAnimale = ({
                   }),
                 onRowDelete: (oldData) =>
                   new Promise((resolve, reject) => {
-                    fetch("/api/evolution-production-animale/delete/" + oldData.idProduction, {
-                      method: "delete",
-                      credentials: 'include',
-                      headers: {
-                        "Content-Type": "application/json",
-                      },
-                      body: JSON.stringify({
-                        tablename: "evolutionProductionAnimale",
-                        idCol: "idProduction",
-                      }),
-                    })
+                    fetch(
+                      "/api/evolution-production-animale/delete/" +
+                        oldData.idProduction,
+                      {
+                        method: "delete",
+                        credentials: "include",
+                        headers: {
+                          "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                          tablename: "evolutionProductionAnimale",
+                          idCol: "idProduction",
+                        }),
+                      }
+                    )
                       .then((response) => {
                         if (!response.ok) {
                           reject();

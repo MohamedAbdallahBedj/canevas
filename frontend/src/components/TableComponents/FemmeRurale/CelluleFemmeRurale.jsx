@@ -109,13 +109,13 @@ const CelluleFemmeRurale = ({ data = [], refetch, loading = false }) => {
     },
     {
       ...baseColumn,
-      field: "nom",
-      title: t("Nom"),
+      field: "prenom",
+      title: t("Prénom"),
     },
     {
       ...baseColumn,
-      field: "prenom",
-      title: t("Prénom"),
+      field: "nom",
+      title: t("Nom"),
     },
     {
       ...baseColumn,
@@ -135,7 +135,7 @@ const CelluleFemmeRurale = ({ data = [], refetch, loading = false }) => {
     {
       ...baseColumn,
       field: "role",
-      title: t("Role"),
+      title: t("Role_"),
     },
     {
       ...baseColumn,
@@ -147,7 +147,9 @@ const CelluleFemmeRurale = ({ data = [], refetch, loading = false }) => {
     {
       ...baseColumn,
       field: "planAction",
-      title: t("Plan d'action (cellule de la chambre d'agriculture) pour la femme rurale"),
+      title: t(
+        "Plan d'action (cellule de la chambre d'agriculture) pour la femme rurale"
+      ),
       editComponent: (props) => (
         <TextField
           sx={{ fontSize: 8, minWidth: 300 }}

@@ -117,7 +117,7 @@ const PlanAction = ({ campagne, data = [], refetch, loading = false }) => {
       ...baseColumn,
       field: "axes",
       title: t("Axes"),
-      groupTitle: t("Axes et activités programés") + ": ",
+      groupTitle: t("َAxes et Activités Projetés") + ": ",
       editComponent: (props) => (
         <TextField
           sx={{ fontSize: 8, minWidth: 300 }}
@@ -135,8 +135,8 @@ const PlanAction = ({ campagne, data = [], refetch, loading = false }) => {
     {
       ...baseColumn,
       field: "activitesProgrammes",
-      title: t("Activités programés"),
-      groupTitle: t("Axes et activités programés") + ": ",
+      title: t("Activités Projetés"),
+      groupTitle: t("َAxes et Activités Projetés") + ": ",
       editComponent: (props) => (
         <TextField
           sx={{ fontSize: 8, minWidth: 300 }}
@@ -289,7 +289,7 @@ const PlanAction = ({ campagne, data = [], refetch, loading = false }) => {
     let tableCells = [
       { text: "", sx: {}, colSpan: 1 },
       {
-        text: t("Axes et activités programés"),
+        text: t("َAxes et Activités Projetés"),
         sx: { textAlign: "center", backgroundColor: "#d3d3d3" },
         colSpan: 2,
       },
@@ -301,7 +301,7 @@ const PlanAction = ({ campagne, data = [], refetch, loading = false }) => {
       {
         text: t("Détails de l'activité"),
         sx: { textAlign: "center", backgroundColor: "#d3d3d3" },
-        colSpan: 4,
+        colSpan: 3,
       },
       {
         text: t("Structures et / ou personnes concernées"),
