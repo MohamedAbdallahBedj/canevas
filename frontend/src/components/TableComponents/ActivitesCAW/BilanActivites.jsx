@@ -154,13 +154,13 @@ const BilanActivites = ({ campagne, data = [], refetch, loading = false }) => {
     {
       ...baseColumn,
       field: "realisation",
-      title: t("Situation de realisation"),
+      title: t("Situation de l'activité"),
       groupTitle: t("Situation et date de réalisation") + ": ",
     },
     {
       ...baseColumn,
       field: "pourcentage",
-      title: t("Pourcentage"),
+      title: t("Pourcentage %"),
       type: "numeric",
       groupTitle: t("Situation et date de réalisation") + ": ",
     },

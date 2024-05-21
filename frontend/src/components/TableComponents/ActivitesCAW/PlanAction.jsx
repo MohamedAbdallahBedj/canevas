@@ -296,12 +296,12 @@ const PlanAction = ({ campagne, data = [], refetch, loading = false }) => {
       {
         text: t("Echéanciers"),
         sx: { textAlign: "center", backgroundColor: "#e6e6e6" },
-        colSpan: 3,
+        colSpan: 2,
       },
       {
         text: t("Détails de l'activité"),
         sx: { textAlign: "center", backgroundColor: "#d3d3d3" },
-        colSpan: 3,
+        colSpan: 4,
       },
       {
         text: t("Structures et / ou personnes concernées"),

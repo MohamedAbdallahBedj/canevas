@@ -167,6 +167,7 @@ const LivraisonCartes = ({ campagne, data = [], refetch, loading = false }) => {
                   idWilaya: idWilayaLookup[row.idWilaya],
                   etat: etatLookup[row.etat],
                   type: typeLookup[row.type],
+                  nombre: parseInt(row.fin) - parseInt(row.debut)
                 }));
 
                 excel(

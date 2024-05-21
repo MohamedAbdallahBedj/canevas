@@ -335,9 +335,9 @@ const CartesFellah = ({ campagne, data = [], refetch, loading = false }) => {
                     } = newData;
                     if (
                       cartesRecues <
-                      cartesUtilisee + cartesAbimee + cartesRestantes
+                      cartesUtilisee + cartesRestantes
                     ) {
-                      toast.error(t("Les données saisies sont incorrectes"), {
+                      toast.error(t("Les données saisies sont incorrectes (Nombre de cartes recues  doit etre superieure ou égale au nombre de cartes utilisées + cartes restantes)"), {
                         autoClose: 2000,
                         hideProgressBar: true,
                       });
@@ -388,7 +388,7 @@ const CartesFellah = ({ campagne, data = [], refetch, loading = false }) => {
                       cartesRecues <
                       cartesUtilisee + cartesAbimee + cartesRestantes
                     ) {
-                      toast.error(t("Les données saisies sont incorrectes"), {
+                      toast.error(t("Les données saisies sont incorrectes (Nombre de cartes recues  doit etre superieure ou égale au nombre de cartes utilisées + cartes restantes)"), {
                         autoClose: 2000,
                         hideProgressBar: true,
                       });
