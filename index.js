@@ -36,6 +36,7 @@ app.use(session({
 }))
 
 app.use("/api/uploads", express.static(__dirname + '/uploads'));
+app.use("/api/params", require("./routes/params"));
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/api", require("./routes/api"));
 app.use("/api/ag", require("./routes/ag"));

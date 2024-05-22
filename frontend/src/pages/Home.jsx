@@ -46,11 +46,13 @@ import BRQPage from "../pages-sub/BRQPage";
 import EmploiPage from "../pages-sub/EmploiPage";
 import FemmeRuralePage from "../pages-sub/FemmeRuralePage";
 import SettingsPage from "../pages-sub/SettingsPage";
+import useFetch from "../hooks/useFetch";
 
 const Home = () => {
   const { user, loading } = React.useContext(AuthContext);
-  const data = { campagnes: [2021, 2022, 2023] };
-  if (loading) return <Loading />;
+  const params = useFetch("/api/params/years", "GET");
+  const { campagnes, years, pap } = params?.data;
+  if (loading || params.loading) return <Loading />;
   if (user)
     return (
       <Sidebar role={user?.role}>
@@ -58,190 +60,178 @@ const Home = () => {
           <Route path="/" element={<Acceuil />} />
           <Route
             path="/bettrave-sucriere"
-            element={<BettraveSucrierePage campagnes={data.campagnes || []} />}
+            element={<BettraveSucrierePage campagnes={campagnes || []} />}
           />
           <Route
             path="/filieres-animales"
-            element={<FilieresAnimalesPage campagnes={data.campagnes || []} />}
+            element={<FilieresAnimalesPage campagnes={campagnes || []} />}
           />
           <Route
             path="/tournesol"
-            element={<TournesolPage campagnes={data.campagnes || []} />}
+            element={<TournesolPage campagnes={campagnes || []} />}
           />
           <Route
             path="/pam-huiles-essentielles"
-            element={
-              <PAMHuilesEssentiellesPage campagnes={data.campagnes || []} />
-            }
+            element={<PAMHuilesEssentiellesPage campagnes={campagnes || []} />}
           />
           <Route
             path="/cartes-fellah"
-            element={<CartesFellahPage campagnes={data.campagnes || []} />}
+            element={<CartesFellahPage campagnes={years || []} />}
           />
 
           <Route
             path="/femme-rurale"
-            element={<FemmeRuralePage campagnes={data.campagnes || []} />}
+            element={<FemmeRuralePage campagnes={years || []} />}
           />
           <Route
             path="/bilan-emploi"
-            element={<EmploiPage campagnes={data.campagnes || []} />}
+            element={<EmploiPage campagnes={campagnes || []} />}
           />
           <Route path="/brq" element={<BRQPage />} />
           <Route
             path="/activites"
-            element={<ActivitesPages campagnes={data.campagnes || []} />}
+            element={<ActivitesPages campagnes={years || []} />}
           />
 
           <Route
             path="/budget"
-            element={<BudgetPage campagnes={data.campagnes || []} />}
+            element={<BudgetPage campagnes={years || []} />}
           />
 
           <Route
             path="/cereales"
-            element={<CerealesPage campagnes={data.campagnes || []} />}
+            element={<CerealesPage campagnes={campagnes || []} />}
           />
           <Route
             path="/pomme-de-terre"
-            element={<PDTPage campagnes={data.campagnes || []} />}
+            element={<PDTPage campagnes={campagnes || []} />}
           />
           <Route
             path="/agrumes"
-            element={<AgrumesPage campagnes={data.campagnes || []} />}
+            element={<AgrumesPage campagnes={campagnes || []} />}
           />
           <Route
             path="/olives"
-            element={<OlivesPage campagnes={data.campagnes || []} />}
+            element={<OlivesPage campagnes={campagnes || []} />}
           />
           <Route
             path="/dattes"
-            element={<DattesPage campagnes={data.campagnes || []} />}
+            element={<DattesPage campagnes={campagnes || []} />}
           />
           <Route
             path="/plasticulture"
-            element={<PlasticulturePage campagnes={data.campagnes || []} />}
+            element={<PlasticulturePage campagnes={campagnes || []} />}
           />
           <Route
             path="/ail"
-            element={<AilPage campagnes={data.campagnes || []} />}
+            element={<AilPage campagnes={campagnes || []} />}
           />
           <Route
             path="/oignon"
-            element={<OignonPage campagnes={data.campagnes || []} />}
+            element={<OignonPage campagnes={campagnes || []} />}
           />
           <Route
             path="/colza"
-            element={<ColzaPage campagnes={data.campagnes || []} />}
+            element={<ColzaPage campagnes={campagnes || []} />}
           />
           <Route
             path="/mais"
-            element={<MaisPage campagnes={data.campagnes || []} />}
+            element={<MaisPage campagnes={campagnes || []} />}
           />
           <Route
             path="/legumes-secs"
-            element={<LegumesSecsPage campagnes={data.campagnes || []} />}
+            element={<LegumesSecsPage campagnes={campagnes || []} />}
           />
           <Route
             path="/tomate-industrielle"
-            element={<TomateIndustiellePage campagnes={data.campagnes || []} />}
+            element={<TomateIndustiellePage campagnes={campagnes || []} />}
           />
           <Route
             path="/irrigation-appoint"
-            element={<IrrigationAppointPage campagnes={data.campagnes || []} />}
+            element={<IrrigationAppointPage campagnes={campagnes || []} />}
           />
           <Route
             path="/chambres-froides-DPV"
-            element={
-              <ChambresFroidesDPVPage campagnes={data.campagnes || []} />
-            }
+            element={<ChambresFroidesDPVPage campagnes={campagnes || []} />}
           />
           <Route
             path="/autres-canevas"
-            element={<AutresCanevasPage campagnes={data.campagnes || []} />}
+            element={<AutresCanevasPage campagnes={campagnes || []} />}
           />
           <Route path="/abbatoirs-et-tueries" element={<AbbatoirsPage />} />
           <Route
             path="/campagne-de-vaccination"
-            element={<VaccinationPage campagnes={data.campagnes || []} />}
+            element={<VaccinationPage campagnes={campagnes || []} />}
           />
           <Route
             path="/chambres-froides-origine-animale"
-            element={
-              <ChambresFroidesDPAPage campagnes={data.campagnes || []} />
-            }
+            element={<ChambresFroidesDPAPage campagnes={campagnes || []} />}
           />
           <Route
             path="/evolution-production-animale"
-            element={
-              <ProductionAnimalePage
-                campagnes={[2017, 2018, 2019, 2020, 2021, 2022]}
-              />
-            }
+            element={<ProductionAnimalePage campagnes={pap} />}
           />
           <Route
             path="/evolution-effectif-animale-betail"
-            element={<EffectifsBetailsPage campagnes={data.campagnes || []} />}
+            element={<EffectifsBetailsPage campagnes={campagnes || []} />}
           />
           <Route
             path="/evolution-effectif-animale-petites-elevage"
             element={
-              <EffectifsPetitesElevagesPage campagnes={data.campagnes || []} />
+              <EffectifsPetitesElevagesPage campagnes={campagnes || []} />
             }
           />
           <Route
             path="/identification-eleveurs"
-            element={<EleveursPage campagnes={data.campagnes || []} />}
+            element={<EleveursPage campagnes={campagnes || []} />}
           />
           <Route
             path="/indentification-producteurs"
-            element={<ProducteursPage campagnes={data.campagnes || []} />}
+            element={<ProducteursPage campagnes={campagnes || []} />}
           />
           <Route
             path="/cultures-fourrageres"
-            element={
-              <CulturesFourrageresPage campagnes={data.campagnes || []} />
-            }
+            element={<CulturesFourrageresPage campagnes={campagnes || []} />}
           />
           <Route
             path="/vulgarisation"
-            element={<VulgarisationPage campagnes={data.campagnes || []} />}
+            element={<VulgarisationPage campagnes={campagnes || []} />}
           />
           <Route
             path="/communication"
-            element={<CommunicationPage campagnes={data.campagnes || []} />}
+            element={<CommunicationPage campagnes={campagnes || []} />}
           />
           <Route
             path="/associations-cooperatives"
             element={
-              <AssociationsCooperativesPage campagnes={data.campagnes || []} />
+              <AssociationsCooperativesPage campagnes={campagnes || []} />
             }
           />
           <Route
             path="/associations-cooperatives-autres"
             element={
-              <AssociationsCooperativesPage campagnes={data.campagnes || []} />
+              <AssociationsCooperativesPage campagnes={campagnes || []} />
             }
           />
           <Route
             path="/conseils-administration"
-            element={<ConseilsPage campagnes={data.campagnes || []} />}
+            element={<ConseilsPage campagnes={campagnes || []} />}
           />
           <Route
             path="/points-vente-ramadhan"
-            element={<PointVentePage campagnes={data.campagnes || []} />}
+            element={<PointVentePage campagnes={campagnes || []} />}
           />
           <Route
             path="/points-vente-ramadhan/nouveau"
-            element={<PointVenteNew campagnes={data.campagnes || []} />}
+            element={<PointVenteNew campagnes={campagnes || []} />}
           />
           <Route
             path="/points-vente-ramadhan/modifier"
-            element={<PointVenteEdit campagnes={data.campagnes || []} />}
+            element={<PointVenteEdit campagnes={campagnes || []} />}
           />
           <Route
             path="/parametres"
-            element={<SettingsPage campagnes={data.campagnes || []} />}
+            element={<SettingsPage campagnes={campagnes || []} />}
           />
         </Routes>
       </Sidebar>
