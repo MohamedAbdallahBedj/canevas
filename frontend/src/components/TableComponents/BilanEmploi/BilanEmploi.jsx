@@ -18,11 +18,11 @@ const BilanEmploi = ({ campagne, data = [], refetch, loading = false }) => {
   const fileName = t("Bilan de l’Emploi structuré");
 
   const categoryLookup = {
-    1: t("Techniciens supérieurs"),
-    2: t("Autres techniciens et Agent de maitrise"),
-    3: t("Agent Techniques"),
-    4: t("Autres personnels"),
-    5: t("Qualifiés spécialisés"),
+    1: t("Cadres Et Cadres Supérieurs"),
+    2: t("Techniciens supérieurs"),
+    3: t("Autres techniciens et Agent de maitrise"),
+    4: t("Agent Techniques"),
+    5: t("Autres personnels Qualifiés spécialisés"),
     6: t("Personnels non qualifiés"),
     7: t("Apprentis"),
   };
@@ -334,6 +334,7 @@ const BilanEmploi = ({ campagne, data = [], refetch, loading = false }) => {
                         ...row,
                         category: categoryLookup[row.category],
                         idWilaya: idWilayaLookup[row.idWilaya],
+                        code: row.category,
                         profile: profileLookup[row.category][row.profile],
                         ensemble:
                           parseInt(row.permanents) +
