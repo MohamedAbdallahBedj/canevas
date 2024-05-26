@@ -190,7 +190,7 @@ const BilanActivites = ({ campagne, data = [], refetch, loading = false }) => {
     {
       ...baseColumn,
       field: "filiere",
-      title: t("Filière"),
+      title: t("Filière_"),
       groupTitle: t("Déroulement de l'activité") + ": ",
     },
     {
@@ -244,14 +244,14 @@ const BilanActivites = ({ campagne, data = [], refetch, loading = false }) => {
 
     {
       ...baseColumn,
-      field: "objectifs",
-      title: t("Objectifs obtenus"),
+      field: "resultats",
+      title: t("Resultats obtenus"),
       groupTitle: t("Objectifs et résultats obtenus") + ": ",
     },
     {
       ...baseColumn,
-      field: "resultats",
-      title: t("Resultats obtenus"),
+      field: "objectifs",
+      title: t("Objectifs obtenus"),
       groupTitle: t("Objectifs et résultats obtenus") + ": ",
     },
     {
@@ -330,6 +330,13 @@ const BilanActivites = ({ campagne, data = [], refetch, loading = false }) => {
         </Button>
       ),
     },
+    {
+      ...baseColumn,
+      field: "input_date",
+      initialEditValue: new Date(),
+      title: t("Date"),
+      type: "date",
+    },
   ];
   if (id !== 59)
     columns = columns.filter((column) => column.field !== "idWilaya");
@@ -366,7 +373,7 @@ const BilanActivites = ({ campagne, data = [], refetch, loading = false }) => {
       { text: "", sx: {}, colSpan: 1 },
       { text: "", sx: {}, colSpan: 1 },
       { text: "", sx: {}, colSpan: 1 },
-      { text: "", sx: {}, colSpan: 1 },
+      { text: "", sx: {}, colSpan: 2 },
     ];
     if (id !== 59) tableCells.shift();
     else tableCells.pop();
@@ -477,7 +484,7 @@ const BilanActivites = ({ campagne, data = [], refetch, loading = false }) => {
                       ...newData,
                       tablename: "bilanActivite",
                       idCol: "id",
-                      id: newData.id
+                      id: newData.id,
                     };
                     const formData = new FormData();
                     Object.keys(row).forEach((item) =>

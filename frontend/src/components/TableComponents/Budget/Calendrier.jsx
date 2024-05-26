@@ -1,15 +1,14 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import AuthContext from "../../../context/AuthContext";
-import MaterialTable, {
-  MTableBody,
-} from "@material-table/core";
+import MaterialTable, { MTableBody } from "@material-table/core";
 import localizationFR from "../../../json/localizationFR.json";
 import localizationAR from "../../../json/localizationAR.json";
 import { toast } from "react-toastify";
 import excel from "../../../exports/excel";
 import { hasNullableValues, isObjectContained } from "../../../exports/divers";
 import { TableCell, TableFooter, TableRow } from "@mui/material";
+import tafqeet from "../../../exports/tafqeet";
 
 const Calendrier = ({ campagne, data = [], refetch, loading = false }) => {
   const { t } = useTranslation();
@@ -193,6 +192,11 @@ const Calendrier = ({ campagne, data = [], refetch, loading = false }) => {
             <TableCell
               sx={{ textAlign: "center", fontSize: 16, fontWeight: "medium" }}
             >{`${sumRevenues} ${t("DA")}`}</TableCell>
+            <TableCell
+              sx={{ textAlign: "center", fontSize: 16, fontWeight: "medium" }}
+            >
+              {tafqeet(sumRevenues)}
+            </TableCell>
           </TableRow>
           <TableRow>
             <TableCell
@@ -204,6 +208,11 @@ const Calendrier = ({ campagne, data = [], refetch, loading = false }) => {
             <TableCell
               sx={{ textAlign: "center", fontSize: 16, fontWeight: "medium" }}
             >{`${sumDepenses} ${t("DA")}`}</TableCell>
+            <TableCell
+              sx={{ textAlign: "center", fontSize: 16, fontWeight: "medium" }}
+            >
+              {tafqeet(sumDepenses)}
+            </TableCell>
           </TableRow>
         </TableFooter>
       </>

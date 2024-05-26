@@ -924,6 +924,7 @@
   "Intitulé_": "عنوان النشاط ",
   "Les données saisies sont incorrectes (Nombre de cartes recues  doit etre superieure ou égale au nombre de cartes utilisées + cartes restantes)": "المعلومات المدخلة خاطئة (عدد البطاقات المستلمة يجب أن يكون أكبر أو يساوي عدد البطاقات المستعملة + عدد البطاقات المتبقية)",
   "Lieu_": "مكان النشاط",
+  "Filière_": "إسم الشعبة", 
   "Village": "القرية",
   "Nombre de jours": "عدد الأيام",
   "Organisation": "الجهة المنظمة ",

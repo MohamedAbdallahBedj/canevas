@@ -171,19 +171,19 @@ const PlanAction = ({ campagne, data = [], refetch, loading = false }) => {
     {
       ...baseColumn,
       field: "intitule",
-      title: t("Intitulé"),
+      title: t("Intitulé_"),
       groupTitle: t("Détails de l'activité") + ": ",
     },
     {
       ...baseColumn,
       field: "filiere",
-      title: t("Filière"),
+      title: t("Filière_"),
       groupTitle: t("Détails de l'activité") + ": ",
     },
     {
       ...baseColumn,
       field: "lieu",
-      title: t("Lieu"),
+      title: t("Lieu_"),
       groupTitle: t("Détails de l'activité") + ": ",
     },
     {
@@ -281,6 +281,13 @@ const PlanAction = ({ campagne, data = [], refetch, loading = false }) => {
         </Button>
       ),
     },
+    {
+      ...baseColumn,
+      field: "input_date",
+      initialEditValue: new Date(),
+      title: t("Date"),
+      type: "date",
+    },
   ];
   if (id !== 59)
     columns = columns.filter((column) => column.field !== "idWilaya");
@@ -314,7 +321,7 @@ const PlanAction = ({ campagne, data = [], refetch, loading = false }) => {
         sx: { textAlign: "center", backgroundColor: "#d3d3d3" },
         colSpan: 2,
       },
-      { text: "", sx: {}, colSpan: 1 },
+      { text: "", sx: {}, colSpan: 2 },
     ];
     if (id !== 59) tableCells.shift();
     else tableCells.pop();

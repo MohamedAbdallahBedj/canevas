@@ -378,7 +378,7 @@ const Affiliation = ({ campagne, data = [], refetch, loading = false }) => {
         sx: { textAlign: "center", backgroundColor: "#e6e6e6" },
         colSpan: 1,
       },
-      { text: "", sx: {}, colSpan: 1 },
+      { text: "", sx: {}, colSpan: 2 },
     ];
     if (id !== 59) tableCells.shift();
     else tableCells.pop();
