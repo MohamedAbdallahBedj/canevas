@@ -10,15 +10,11 @@ import ProductionAnimale from "../components/TableComponents/ProductionAnimale/P
 
 const ProductionAnimalePage = ({ campagnes = [] }) => {
   const { t } = useTranslation();
-  const { user} = React.useContext(AuthContext);
-const { idWilaya:id } = user;
-  const [campagne, setCampagne] = React.useState(
-    campagnes.length ? campagnes.length : null
-  );
+  const { user } = React.useContext(AuthContext);
+  const { idWilaya: id } = user;
   const [wilaya, setWilaya] = React.useState(id);
   var searchParams = {
     table: "evolutionProductionAnimale",
-    annee: campagne,
   };
   const { data, loading, error, refetch } = useFetch(
     "/api/evolution-production-animale/table",
@@ -32,15 +28,6 @@ const { idWilaya:id } = user;
   return (
     <>
       <Stack direction="row" marginBlockEnd={1}>
-        <OptionsList
-          label={t("Année")}
-          value={campagne}
-          setValue={setCampagne}
-          options={campagnes.map((item, index) => ({
-            label: `${item}`,
-            value: index + 1,
-          }))}
-        />
         {id === 59 ? (
           <OptionsList
             label={t("Wilaya")}

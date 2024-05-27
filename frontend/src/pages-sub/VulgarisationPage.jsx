@@ -13,15 +13,16 @@ const VulgarisationPage = ({ campagnes }) => {
   const { t } = useTranslation();
   const { user } = React.useContext(AuthContext);
   const { idWilaya: id } = user;
+
+  const [wilaya, setWilaya] = React.useState(id);
+  const [wilaya2, setWilaya2] = React.useState(id);
+
   const [campagne, setCampagne] = React.useState(
     campagnes.length ? campagnes[campagnes.length - 1] : null
   );
-  const [wilaya, setWilaya] = React.useState(id);
-
   const [campagne2, setCampagne2] = React.useState(
     campagnes.length ? campagnes[campagnes.length - 1] : null
   );
-  const [wilaya2, setWilaya2] = React.useState(id);
 
   var searchParams1 = {
     table: "activiteVulgarisationRapprochee",
@@ -43,7 +44,7 @@ const VulgarisationPage = ({ campagnes }) => {
     "/api/vulgarisation/table",
     "GET",
     ![59, 0].includes(parseInt(wilaya2))
-      ? { ...searchParams2, wilaya2 }
+      ? { ...searchParams2, wilaya: wilaya2 }
       : searchParams2
   );
 
