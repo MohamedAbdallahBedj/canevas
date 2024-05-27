@@ -99,7 +99,7 @@ const PDTPage = ({ campagnes }) => {
       </Stack>
       <PDT
         type={value.label}
-        relation={"ailSuivi" + value.suffix}
+        relation={"pdtSuivi" + value.suffix}
         campagne={campagne}
         data={suivi?.data}
         refetch={suivi?.refetch}
