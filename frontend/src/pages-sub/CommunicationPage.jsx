@@ -49,7 +49,7 @@ const CommunicationPage = ({ campagnes }) => {
     "/api/communication/table",
     "GET",
     ![59, 0].includes(parseInt(wilaya2))
-      ? { ...searchParams2, wilaya2 }
+      ? { ...searchParams2,wilaya: wilaya2 }
       : searchParams2
   );
 
@@ -61,7 +61,7 @@ const CommunicationPage = ({ campagnes }) => {
     "/api/communication/table",
     "GET",
     ![59, 0].includes(parseInt(wilaya3))
-      ? { ...searchParams3, wilaya3 }
+      ? { ...searchParams3, wilaya: wilaya3 }
       : searchParams3
   );
 

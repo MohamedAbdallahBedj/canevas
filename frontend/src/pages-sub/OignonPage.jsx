@@ -74,7 +74,7 @@ const OignonPage = ({ campagnes }) => {
     "/api/ail/table",
     "GET",
     ![59, 0].includes(parseInt(wilaya2))
-      ? { ...searchParamsB, wilaya2 }
+      ? { ...searchParamsB,wilaya: wilaya2 }
       : searchParamsB
   );
   if (fakeLoad) return <Loading />;

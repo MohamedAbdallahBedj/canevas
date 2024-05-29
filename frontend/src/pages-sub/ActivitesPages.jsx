@@ -43,7 +43,7 @@ const ActivitesPages = ({ campagnes }) => {
     "/api/vulgarisation/table",
     "GET",
     ![59, 0].includes(parseInt(wilaya2))
-      ? { ...searchParams2, wilaya2 }
+      ? { ...searchParams2,wilaya: wilaya2 }
       : searchParams2
   );
 

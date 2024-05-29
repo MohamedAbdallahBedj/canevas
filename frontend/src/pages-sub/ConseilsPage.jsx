@@ -61,7 +61,7 @@ const ConseilsPage = ({ campagnes }) => {
     "/api/conseils-administration/table",
     "GET",
     ![59, 0].includes(parseInt(wilaya2))
-      ? { ...searchParams2, wilaya2 }
+      ? { ...searchParams2,wilaya: wilaya2 }
       : searchParams2
   );
 
@@ -73,7 +73,7 @@ const ConseilsPage = ({ campagnes }) => {
     "/api/conseils-administration/table",
     "GET",
     ![59, 0].includes(parseInt(wilaya3))
-      ? { ...searchParams3, wilaya3 }
+      ? { ...searchParams3, wilaya: wilaya3 }
       : searchParams3
   );
 
@@ -85,7 +85,7 @@ const ConseilsPage = ({ campagnes }) => {
     "/api/conseils-administration/table",
     "GET",
     ![59, 0].includes(parseInt(wilaya4))
-      ? { ...searchParams4, wilaya4 }
+      ? { ...searchParams4, wilaya: wilaya4 }
       : searchParams4
   );
 
@@ -94,7 +94,7 @@ const ConseilsPage = ({ campagnes }) => {
     "/api/ag/table",
     "GET",
     ![59, 0].includes(parseInt(wilaya5))
-      ? { ...searchParams5, wilaya5 }
+      ? { ...searchParams5, wilaya: wilaya5 }
       : searchParams5
   );
 

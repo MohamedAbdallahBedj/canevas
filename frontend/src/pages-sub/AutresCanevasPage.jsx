@@ -44,7 +44,7 @@ const AutresCanevasPage = ({ campagnes }) => {
     "/api/autres-canevas/table",
     "GET",
     ![59, 0].includes(parseInt(wilaya2))
-      ? { ...searchParams2, wilaya2 }
+      ? { ...searchParams2,wilaya: wilaya2 }
       : searchParams2
   );
   if (data1.error || data2.error) return <NotFound />;

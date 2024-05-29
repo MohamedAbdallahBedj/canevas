@@ -44,7 +44,7 @@ const TomateIndustiellePage = ({ campagnes }) => {
     "/api/tomate-industrielle/table",
     "GET",
     ![59, 0].includes(parseInt(wilaya2))
-      ? { ...searchParamsS, wilaya2 }
+      ? { ...searchParamsS,wilaya: wilaya2 }
       : searchParamsS
   );
   if (prevision.error || suivi.error) return <NotFound />;

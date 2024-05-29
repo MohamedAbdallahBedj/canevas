@@ -40,7 +40,7 @@ const OlivesPage = ({ campagnes }) => {
     "/api/olives/table",
     "GET",
     ![59, 0].includes(parseInt(wilaya2))
-      ? { ...searchParamsUT, wilaya2 }
+      ? { ...searchParamsUT,wilaya: wilaya2 }
       : searchParamsUT
   );
   if (olives.error || unitesTransformation.error) return <NotFound />;

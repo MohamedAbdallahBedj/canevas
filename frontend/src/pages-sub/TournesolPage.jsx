@@ -40,7 +40,7 @@ const TournesolPage = ({ campagnes }) => {
     "/api/tournesol/table",
     "GET",
     ![59, 0].includes(parseInt(wilaya2))
-      ? { ...searchParamsMB, wilaya2 }
+      ? { ...searchParamsMB,wilaya: wilaya2 }
       : searchParamsMB
   );
   if (laboursSemaille.error || moissonBattage.error) return <NotFound />;

@@ -34,7 +34,7 @@ const FemmeRuralePage = ({ campagnes }) => {
     "/api/api/table",
     "GET",
     ![59, 0].includes(parseInt(wilaya3))
-      ? { ...searchParams3, wilaya3 }
+      ? { ...searchParams3, wilaya: wilaya3 }
       : searchParams3
   );
   if (cellule.error || affiliation.error) return <NotFound />;
