@@ -61,8 +61,8 @@ router.get("/table", isAuthorized, async (req, res) => {
         console.error('Error Content: ' + err.message);
         console.error("---------------------------------------------------------------");
         res.status(500).send("Server error");
-    }finally{
-        }
+    } finally {
+    }
 });
 
 router.post("/add", isAuthorized, upload.single('fichier'), async (req, res) => {
@@ -73,6 +73,13 @@ router.post("/add", isAuthorized, upload.single('fichier'), async (req, res) => 
         if (ks.includes('dateNaissance')) {
             row.dateNaissance = new Date(row.dateNaissance)
         }
+        if (ks.includes('input_date')) {
+            row.input_date = new Date(row.input_date)
+        }
+        if (ks.includes('date')) {
+            row.date = new Date(row.date)
+        }
+        console.log(row)
 
         if (!(tablename && row)) return res.status(403).send("Tableau non trouvé!");
         if (req.file) row.fichier = req.file.filename;
@@ -93,8 +100,8 @@ router.post("/add", isAuthorized, upload.single('fichier'), async (req, res) => 
         console.error('Error Content: ' + err.message);
         console.error("---------------------------------------------------------------");
         res.status(500).send("Server error");
-    }finally{
-        }
+    } finally {
+    }
 });
 
 router.post("/edit", isAuthorized, upload.single('fichier'), async (req, res) => {
@@ -149,8 +156,8 @@ router.post("/edit", isAuthorized, upload.single('fichier'), async (req, res) =>
         console.error('Error Content: ' + err.message);
         console.error("---------------------------------------------------------------");
         res.status(500).send("Server error");
-    }finally{
-        }
+    } finally {
+    }
 });
 
 
@@ -181,8 +188,8 @@ router.delete("/delete/:id", isAuthorized, async (req, res) => {
         console.error('Error Content: ' + err.message);
         console.error("---------------------------------------------------------------");
         res.status(500).send("Server error");
-    }finally{
-        }
+    } finally {
+    }
 });
 
 

@@ -188,7 +188,7 @@ const Abbatoires = ({ data = [], refetch, loading = false }) => {
                         "Content-Type": "application/json",
                       },
                       body: JSON.stringify({
-                        tablename: "abbatoirs",
+                        tablename: "abattoirs",
                         row: { ...newData, idWilaya: id },
                       }),
                     })
@@ -224,7 +224,7 @@ const Abbatoires = ({ data = [], refetch, loading = false }) => {
                         "Content-Type": "application/json",
                       },
                       body: JSON.stringify({
-                        tablename: "abbatoirs",
+                        tablename: "abattoirs",
                         properties,
                         idCol: "idAbbatoir",
                         id: idAbbatoir,
@@ -261,7 +261,7 @@ const Abbatoires = ({ data = [], refetch, loading = false }) => {
                           "Content-Type": "application/json",
                         },
                         body: JSON.stringify({
-                          tablename: "abbatoirs",
+                          tablename: "abattoirs",
                           idCol: "idAbbatoir",
                         }),
                       }
