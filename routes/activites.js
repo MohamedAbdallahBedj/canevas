@@ -79,7 +79,6 @@ router.post("/add", isAuthorized, upload.single('fichier'), async (req, res) => 
         if (ks.includes('date')) {
             row.date = new Date(row.date)
         }
-        console.log(row)
 
         if (!(tablename && row)) return res.status(403).send("Tableau non trouvé!");
         if (req.file) row.fichier = req.file.filename;
