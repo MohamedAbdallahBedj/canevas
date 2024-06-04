@@ -21,7 +21,8 @@ const EleveursCaprin = ({
 }) => {
   const { t } = useTranslation();
   const { user } = React.useContext(AuthContext);
-  const { idWilaya: id } = user;  const fileName = t("Identification des Eleveurs Caprins");
+  const { idWilaya: id } = user;
+  const fileName = t("Identification des Eleveurs Caprins");
   const idWilayaLookup = {
     1: t("Adrar"),
     2: t("Chlef"),
@@ -137,12 +138,14 @@ const EleveursCaprin = ({
       field: "eleveurHorsSol",
       title: t("Eleveur en Hors Sol"),
       type: "boolean",
+      initialEditValue: false,
     },
     {
       ...baseColumn,
       field: "reproducteur",
       title: t("Reproducteur (Chevrette)"),
       type: "boolean",
+      initialEditValue: false,
       groupTitle: t("Adhérant au Programme de") + ": ",
     },
     {
@@ -241,7 +244,7 @@ const EleveursCaprin = ({
                     if (hasNullableValues(newData)) return reject();
                     fetch("/api/identification-eleveurs/add", {
                       method: "post",
-                      credentials: 'include',
+                      credentials: "include",
                       headers: {
                         "Content-Type": "application/json",
                       },
@@ -277,7 +280,7 @@ const EleveursCaprin = ({
                     const { id, tableData, ...properties } = newData;
                     fetch("/api/identification-eleveurs/edit", {
                       method: "post",
-                      credentials: 'include',
+                      credentials: "include",
                       headers: {
                         "Content-Type": "application/json",
                       },
@@ -312,7 +315,7 @@ const EleveursCaprin = ({
                   new Promise((resolve, reject) => {
                     fetch("/api/identification-eleveurs/delete/" + oldData.id, {
                       method: "delete",
-                      credentials: 'include',
+                      credentials: "include",
                       headers: {
                         "Content-Type": "application/json",
                       },

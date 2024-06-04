@@ -72,7 +72,7 @@ const tabs = [
   },
   {
     label: "Effectif Equin",
-    value: 3,
+    value: 4,
     suffix: "Equin",
     component: (campagne, data, refetch, loading, lookup) => (
       <Equin
@@ -172,7 +172,7 @@ const EffectifsBetailsPage = ({ campagnes }) => {
         )}
       </Stack>
       {value?.component(
-        data.campagne,
+        campagne,
         data.data,
         data.refetch,
         data.loading,

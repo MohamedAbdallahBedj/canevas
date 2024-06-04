@@ -18,7 +18,8 @@ const Cuniculture = ({
 }) => {
   const { t } = useTranslation();
   const { user } = React.useContext(AuthContext);
-  const { idWilaya: id } = user;  const fileName = t("Cuniculture (Élevage de Lapin)");
+  const { idWilaya: id } = user;
+  const fileName = t("Cuniculture (Élevage de Lapin)");
 
   const idWilayaLookup = {
     1: t("Adrar"),
@@ -135,6 +136,10 @@ const Cuniculture = ({
       type: "numeric",
       groupTitle: t("Effectif Mis En Place (Sujet)") + ": ",
       editable: "never",
+      render: (data) => {
+        const { elevageSol, elevageClapier } = data;
+        return <>{elevageSol + elevageClapier}</>;
+      },
     },
     {
       ...baseColumn,
@@ -226,22 +231,27 @@ const Cuniculture = ({
             : {
                 onRowAdd: (newData) =>
                   new Promise((resolve, reject) => {
-                    if (hasNullableValues(newData)) return reject();
-                    fetch("/api/evolution-effectif-animale-petites-elevage/add", {
-                      method: "post",
-                      credentials: 'include',
-                      headers: {
-                        "Content-Type": "application/json",
-                      },
-                      body: JSON.stringify({
-                        tablename: "avicultureAutres",
-                        row: {
-                          ...newData,
-                          annee: campagne,
-                          idWilaya: id,
+                    console.log(newData);
+                    const { totalLapin, ...rest } = newData;
+                    if (hasNullableValues(rest)) return reject();
+                    fetch(
+                      "/api/evolution-effectif-animale-petites-elevage/add",
+                      {
+                        method: "post",
+                        credentials: "include",
+                        headers: {
+                          "Content-Type": "application/json",
                         },
-                      }),
-                    })
+                        body: JSON.stringify({
+                          tablename: "cuniculture",
+                          row: {
+                            ...rest,
+                            annee: campagne,
+                            idWilaya: id,
+                          },
+                        }),
+                      }
+                    )
                       .then((response) => {
                         if (!response.ok) {
                           reject();
@@ -267,19 +277,22 @@ const Cuniculture = ({
                     if (hasNullableValues(newData)) return reject();
                     if (isObjectContained(oldData, newData)) return resolve();
                     const { id, tableData, ...properties } = newData;
-                    fetch("/api/evolution-effectif-animale-petites-elevage/edit", {
-                      method: "post",
-                      credentials: 'include',
-                      headers: {
-                        "Content-Type": "application/json",
-                      },
-                      body: JSON.stringify({
-                        tablename: "avicultureAutres",
-                        properties,
-                        idCol: "id",
-                        id: id,
-                      }),
-                    })
+                    fetch(
+                      "/api/evolution-effectif-animale-petites-elevage/edit",
+                      {
+                        method: "post",
+                        credentials: "include",
+                        headers: {
+                          "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                          tablename: "cuniculture",
+                          properties,
+                          idCol: "id",
+                          id: id,
+                        }),
+                      }
+                    )
                       .then((response) => {
                         if (!response.ok) {
                           reject();
@@ -302,17 +315,21 @@ const Cuniculture = ({
                   }),
                 onRowDelete: (oldData) =>
                   new Promise((resolve, reject) => {
-                    fetch("/api/evolution-effectif-animale-petites-elevage/delete/" + oldData.id, {
-                      method: "delete",
-                      credentials: 'include',
-                      headers: {
-                        "Content-Type": "application/json",
-                      },
-                      body: JSON.stringify({
-                        tablename: "avicultureAutres",
-                        idCol: "id",
-                      }),
-                    })
+                    fetch(
+                      "/api/evolution-effectif-animale-petites-elevage/delete/" +
+                        oldData.id,
+                      {
+                        method: "delete",
+                        credentials: "include",
+                        headers: {
+                          "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                          tablename: "cuniculture",
+                          idCol: "id",
+                        }),
+                      }
+                    )
                       .then((response) => {
                         if (!response.ok) {
                           reject();

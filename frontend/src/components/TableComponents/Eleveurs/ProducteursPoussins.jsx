@@ -178,7 +178,7 @@ const ProducteursPoussins = ({ data = [], refetch, loading = false }) => {
                         "Content-Type": "application/json",
                       },
                       body: JSON.stringify({
-                        tablename: "listeProducteursPoussinss",
+                        tablename: "listeProducteursPoussins",
                         row: { ...newData, idWilaya: id },
                       }),
                     })
@@ -214,7 +214,7 @@ const ProducteursPoussins = ({ data = [], refetch, loading = false }) => {
                         "Content-Type": "application/json",
                       },
                       body: JSON.stringify({
-                        tablename: "listeProducteursPoussinss",
+                        tablename: "listeProducteursPoussins",
                         properties,
                         idCol: "id",
                         id: id,
@@ -249,7 +249,7 @@ const ProducteursPoussins = ({ data = [], refetch, loading = false }) => {
                         "Content-Type": "application/json",
                       },
                       body: JSON.stringify({
-                        tablename: "listeProducteursPoussinss",
+                        tablename: "listeProducteursPoussins",
                         idCol: "id",
                       }),
                     })

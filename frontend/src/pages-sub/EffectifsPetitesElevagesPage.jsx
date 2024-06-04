@@ -173,11 +173,14 @@ const EffectifsPetitesElevagesPage = ({ campagnes }) => {
     row[`nomCommune${is_rtl ? "AR" : "FR"}`],
   ]);
 
-  var searchParams = {
-    table: value.suffix,
-    annee: campagne,
-    type: value.type,
-  };
+  var searchParams =
+    value.type > 4
+      ? { table: value.suffix, annee: campagne }
+      : {
+          table: value.suffix,
+          annee: campagne,
+          type: value.type,
+        };
   const data = useFetch(
     "/api/evolution-effectif-animale-petites-elevage/table",
     "GET",
@@ -225,7 +228,7 @@ const EffectifsPetitesElevagesPage = ({ campagnes }) => {
         )}
       </Stack>
       {value?.component(
-        data.campagne,
+        campagne,
         data.data,
         data.refetch,
         data.loading,

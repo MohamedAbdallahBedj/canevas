@@ -143,6 +143,7 @@ const EleveursBovin = ({
       field: "eleveurHorsSol",
       title: t("Eleveur en Hors Sol"),
       type: "boolean",
+      initialEditValue: false
     },
     {
       ...baseColumn,
@@ -154,6 +155,7 @@ const EleveursBovin = ({
       field: "inseminationArtificielle",
       title: t("Insémination Artificielle"),
       type: "boolean",
+      initialEditValue: false,
       mainField: t("Adhérant au Programme de") + ": ",
     },
     {
@@ -161,6 +163,7 @@ const EleveursBovin = ({
       field: "reproducteur",
       title: t("Reproducteur (Velle/Génisse)"),
       type: "boolean",
+      initialEditValue: false,
       mainField: t("Adhérant au Programme de") + ": ",
     },
     {
@@ -168,6 +171,7 @@ const EleveursBovin = ({
       field: "acquisitionFourrageEnrubannee",
       title: t("Acquisition de Fourrage Enrubannée "),
       type: "boolean",
+      initialEditValue: false,
       mainField: t("Adhérant au Programme de") + ": ",
     },
     {
@@ -175,6 +179,7 @@ const EleveursBovin = ({
       field: "semenceFourragere",
       title: t("Acquisition de Semence Fourragère"),
       type: "boolean",
+      initialEditValue: false,
       mainField: t("Adhérant au Programme de") + ": ",
     },
     {
@@ -182,6 +187,7 @@ const EleveursBovin = ({
       field: "primeEnsilage",
       title: t("Prime d'Ensilage"),
       type: "boolean",
+      initialEditValue: false,
       mainField: t("Adhérant au Programme de") + ": ",
     },
     {
@@ -189,6 +195,7 @@ const EleveursBovin = ({
       field: "primeLait",
       title: t("Prime Lait"),
       type: "boolean",
+      initialEditValue: false,
       mainField: t("Adhérant au Programme de") + ": ",
     },
     {

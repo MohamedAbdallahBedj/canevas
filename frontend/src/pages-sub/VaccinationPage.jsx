@@ -124,7 +124,7 @@ const VaccinationPage = ({ campagnes }) => {
           <></>
         )}
       </Stack>
-      {value?.component(data.campagne, data.data, data.refetch, data.loading)}
+      {value?.component(campagne, data.data, data.refetch, data.loading)}
     </>
   );
 };
