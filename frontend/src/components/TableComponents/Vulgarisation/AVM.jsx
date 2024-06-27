@@ -269,7 +269,7 @@ const AVM = ({ campagne, data = [], refetch, loading = false }) => {
                   new Promise((resolve, reject) => {
                     if (hasNullableValues(newData)) return reject();
                     if (isObjectContained(oldData, newData)) return resolve();
-                    const { idSuivi, tableData, ...properties } = newData;
+                    const { idAction, tableData, ...properties } = newData;
                     fetch("/api/vulgarisation/edit", {
                       method: "post",
                       credentials: 'include',
@@ -279,8 +279,8 @@ const AVM = ({ campagne, data = [], refetch, loading = false }) => {
                       body: JSON.stringify({
                         tablename: "actionVulgarisationMasse",
                         properties,
-                        idCol: "idSuivi",
-                        id: idSuivi,
+                        idCol: "idAction",
+                        id: idAction,
                       }),
                     })
                       .then((response) => {
@@ -305,7 +305,7 @@ const AVM = ({ campagne, data = [], refetch, loading = false }) => {
                   }),
                 onRowDelete: (oldData) =>
                   new Promise((resolve, reject) => {
-                    fetch("/api/vulgarisation/delete/" + oldData.idSuivi, {
+                    fetch("/api/vulgarisation/delete/" + oldData.idAction, {
                       method: "delete",
                       credentials: 'include',
                       headers: {
@@ -313,7 +313,7 @@ const AVM = ({ campagne, data = [], refetch, loading = false }) => {
                       },
                       body: JSON.stringify({
                         tablename: "actionVulgarisationMasse",
-                        idCol: "idSuivi",
+                        idCol: "idAction",
                       }),
                     })
                       .then((response) => {
