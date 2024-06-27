@@ -241,7 +241,7 @@ const AVM = ({ campagne, data = [], refetch, loading = false }) => {
                         "Content-Type": "application/json",
                       },
                       body: JSON.stringify({
-                        tablename: "suiviAVM",
+                        tablename: "actionVulgarisationMasse",
                         row: { ...newData, annee: campagne, idWilaya: id },
                       }),
                     })
@@ -277,7 +277,7 @@ const AVM = ({ campagne, data = [], refetch, loading = false }) => {
                         "Content-Type": "application/json",
                       },
                       body: JSON.stringify({
-                        tablename: "suiviAVM",
+                        tablename: "actionVulgarisationMasse",
                         properties,
                         idCol: "idSuivi",
                         id: idSuivi,
@@ -312,7 +312,7 @@ const AVM = ({ campagne, data = [], refetch, loading = false }) => {
                         "Content-Type": "application/json",
                       },
                       body: JSON.stringify({
-                        tablename: "suiviAVM",
+                        tablename: "actionVulgarisationMasse",
                         idCol: "idSuivi",
                       }),
                     })
