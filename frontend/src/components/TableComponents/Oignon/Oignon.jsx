@@ -128,13 +128,6 @@ const Oignon = ({
       title: t("RDT Prévisionnel (Qx/Ha)"),
       type: "numeric",
     },
-
-    {
-      ...baseColumn,
-      field: "quantitesStockees",
-      title: t("Quantités Stockées (Qx)"),
-      type: "numeric",
-    },
     {
       ...baseColumn,
       field: "date",
