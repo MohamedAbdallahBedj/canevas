@@ -66,7 +66,7 @@ const OignonPage = ({ campagnes }) => {
 
   // Bilans
   var searchParamsB = {
-    table: "ailBilan" + value.suffix,
+    table: "oignonBilan" + value.suffix,
     annee: campagne2,
   };
 
