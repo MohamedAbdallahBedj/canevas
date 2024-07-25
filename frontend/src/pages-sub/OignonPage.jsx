@@ -150,7 +150,7 @@ const OignonPage = ({ campagnes }) => {
       </Stack>
       <Bilan
         type={value.label}
-        relation={"ailBilan" + value.suffix}
+        relation={"oignonBilan" + value.suffix}
         campagne={campagne2}
         data={bilan?.data}
         refetch={bilan?.refetch}
