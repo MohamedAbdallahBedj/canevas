@@ -323,7 +323,7 @@ const LivraisonCartes = ({ campagne, data = [], refetch, loading = false }) => {
             ? localizationFR
             : localizationAR
         }
-        style={{ paddingInlineEnd: 20 }}
+        style={{ paddingInlineEnd: 20, width: "96vw" }}
       />
     </>
   );

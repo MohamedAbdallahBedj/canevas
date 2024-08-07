@@ -135,6 +135,10 @@ const CartesFellah = ({ campagne, data = [], refetch, loading = false }) => {
       title: t("Liste des numéros de série"),
       type: "text",
       groupTitle: t("Les cartes recues") + ": ",
+      render: (rowData) => {
+        const styles = { width: 250 };
+        return <p style={styles}>{rowData.cartesRecuesNumeroSerie}</p>;
+      },
       editComponent: (props) => (
         <TextField
           variant="outlined"
@@ -160,6 +164,10 @@ const CartesFellah = ({ campagne, data = [], refetch, loading = false }) => {
       title: t("Liste des numéros de série"),
       type: "text",
       groupTitle: t("Les cartes utilisées") + ": ",
+      render: (rowData) => {
+        const styles = { width: 250 };
+        return <p style={styles}>{rowData.cartesUtiliseeNumeroSerie}</p>;
+      },
       editComponent: (props) => (
         <TextField
           variant="outlined"
@@ -185,6 +193,10 @@ const CartesFellah = ({ campagne, data = [], refetch, loading = false }) => {
       title: t("Liste des numéros de série"),
       type: "text",
       groupTitle: t("Les cartes Abimées") + ": ",
+      render: (rowData) => {
+        const styles = { width: 250 };
+        return <p style={styles}>{rowData.cartesAbimeeNumeroSerie}</p>;
+      },
       editComponent: (props) => (
         <TextField
           variant="outlined"
@@ -210,6 +222,10 @@ const CartesFellah = ({ campagne, data = [], refetch, loading = false }) => {
       title: t("Liste des numéros de série"),
       type: "text",
       groupTitle: t("Les cartes Restantes") + ": ",
+      render: (rowData) => {
+        const styles = { width: 250 };
+        return <p style={styles}>{rowData.cartesRestantesNumeroSerie}</p>;
+      },
       editComponent: (props) => (
         <TextField
           variant="outlined"
@@ -334,13 +350,18 @@ const CartesFellah = ({ campagne, data = [], refetch, loading = false }) => {
                       cartesRestantes,
                     } = newData;
                     if (
-                      cartesRecues <
-                      cartesUtilisee + cartesRestantes
+                      cartesRecues &&
+                      cartesRecues < cartesUtilisee + cartesRestantes
                     ) {
-                      toast.error(t("Les données saisies sont incorrectes (Nombre de cartes recues  doit etre superieure ou égale au nombre de cartes utilisées + cartes restantes)"), {
-                        autoClose: 2000,
-                        hideProgressBar: true,
-                      });
+                      toast.error(
+                        t(
+                          "Les données saisies sont incorrectes (Nombre de cartes recues  doit etre superieure ou égale au nombre de cartes utilisées + cartes restantes)"
+                        ),
+                        {
+                          autoClose: 2000,
+                          hideProgressBar: true,
+                        }
+                      );
                       return reject();
                     }
                     fetch("/api/cartes-fellah/add", {
@@ -385,13 +406,18 @@ const CartesFellah = ({ campagne, data = [], refetch, loading = false }) => {
                       cartesRestantes,
                     } = newData;
                     if (
-                      cartesRecues <
-                      cartesUtilisee + cartesAbimee + cartesRestantes
+                      cartesRecues &&
+                      cartesRecues < cartesUtilisee + cartesRestantes
                     ) {
-                      toast.error(t("Les données saisies sont incorrectes (Nombre de cartes recues  doit etre superieure ou égale au nombre de cartes utilisées + cartes restantes)"), {
-                        autoClose: 2000,
-                        hideProgressBar: true,
-                      });
+                      toast.error(
+                        t(
+                          "Les données saisies sont incorrectes (Nombre de cartes recues  doit etre superieure ou égale au nombre de cartes utilisées + cartes restantes)"
+                        ),
+                        {
+                          autoClose: 2000,
+                          hideProgressBar: true,
+                        }
+                      );
                       return reject();
                     }
                     const { id, tableData, ...properties } = newData;
@@ -468,7 +494,7 @@ const CartesFellah = ({ campagne, data = [], refetch, loading = false }) => {
             ? localizationFR
             : localizationAR
         }
-        style={{ paddingInlineEnd: 20 }}
+        style={{ paddingInlineEnd: 20, width: "96vw" }}
         components={{
           Header: CustomHeader,
         }}

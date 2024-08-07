@@ -84,7 +84,7 @@ const Acceuil = () => {
         <LockResetIcon sx={{ fontSize: 32 }} />
         <Typography variant="h6" component="h6">
           {t(
-            "Afin de renforcer la sécurité de votre compte utilisateur. Veuillez modifier votre mot de passe"
+            "Afin de renforcer la sécurité de votre compte utilisateur. Vous pouvez maintenant modifier votre mot de passe."
           ) + "  "}
           <Link to={"/parametres"}>{t(" en cliquant ici")}</Link>
         </Typography>

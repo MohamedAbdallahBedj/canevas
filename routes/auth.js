@@ -3,6 +3,7 @@ const router = require("express").Router(); // Initialize Express router
 const pool = require("../db"); // Database connection pool
 const bcrypt = require('bcryptjs'); // Library for password hashing
 const { isAuthorized, checkRole } = require("../middleware/authMiddleware"); // Custom middleware for user authorization
+const { logger } = require("../utils/logger");
 
 // Function to check if an email is valid
 const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -88,7 +89,7 @@ router.post('/password', isAuthorized, async (req, res) => {
       const query = 'UPDATE public.login set "motDePasse" = $1 WHERE "nomUtilisateur" = $2;'
       const hashedPassword = await bcrypt.hash(newPass, 10); // Hash the motDePasse for storage
       await pool.query(query, [hashedPassword, nomUtilisateur]);
-
+      logger.log('Password Change Detected: ' + nomUtilisateur + ' At Time ' + new Date().toLocaleString());
       res.status(201).send('Mot de passe est changé avec succés.');
     } else {
       return res.status(401).send('Mot de passe erronées!');
