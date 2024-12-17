@@ -103,7 +103,7 @@ const PAMHuilesEssentielles = ({
     {
       ...baseColumn,
       field: "idSource",
-      title: t("Source de la Plante Aromatique et médécinale"),
+      title: t("Plante Spontané ou Cultivé?"),
       lookup: idSourceLookup,
     },
     {

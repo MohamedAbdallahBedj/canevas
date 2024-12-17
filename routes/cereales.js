@@ -32,6 +32,8 @@ router.get("/table", isAuthorized, async (req, res) => {
         if (filters.length > 0) {
             queryTxt += ` WHERE ${filters.join(' AND ')}`;
         }
+        queryTxt += ` ORDER BY "idWilaya", "idEspece"`;
+
         const rows = await pool.query(queryTxt);
         res.status(200).send(rows.rows);
     } catch (err) {

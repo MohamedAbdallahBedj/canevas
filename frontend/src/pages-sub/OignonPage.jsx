@@ -21,11 +21,6 @@ const tabs = [
     label: "Arrière Saison ",
     suffix: "AS",
   },
-  {
-    value: 2,
-    label: "Primeur ",
-    suffix: "P",
-  },
 ];
 
 const OignonPage = ({ campagnes }) => {
@@ -74,7 +69,7 @@ const OignonPage = ({ campagnes }) => {
     "/api/ail/table",
     "GET",
     ![59, 0].includes(parseInt(wilaya2))
-      ? { ...searchParamsB,wilaya: wilaya2 }
+      ? { ...searchParamsB, wilaya: wilaya2 }
       : searchParamsB
   );
   if (fakeLoad) return <Loading />;

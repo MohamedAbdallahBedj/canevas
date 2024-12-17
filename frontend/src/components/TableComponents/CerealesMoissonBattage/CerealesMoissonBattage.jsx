@@ -27,8 +27,8 @@ const CerealesMoissonBattage = ({
     6: t("Orge (Semences)"),
     7: t("Avoine (Consommation)"),
     8: t("Avoine (Semences)"),
-    9: t("Blé Tritical (Consommation)"),
-    10: t("Blé Tritical (Semences)"),
+    9: t("Tritical (Consommation)"),
+    10: t("Tritical (Semences)"),
   };
   const idWilayaLookup = {
     1: t("Adrar"),

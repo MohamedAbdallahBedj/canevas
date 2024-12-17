@@ -27,4 +27,31 @@ export function isObjectContained(parentObj, childObj) {
 export const formatBoolean = (value, positive = '++++', negative = '----') => {
     return value ? positive : negative
 }
+export const getWeekStartAndEnd = (date) => {
+    // Ensure the input is a Date object
+    const inputDate = new Date(date);
 
+    // If the input is invalid, throw an error
+    if (isNaN(inputDate)) {
+        throw new Error("Invalid Date");
+    }
+
+    // Get the day of the week (0 = Sunday, 6 = Saturday)
+    const dayOfWeek = inputDate.getDay();
+
+    // Calculate the difference to Saturday (start of the week)
+    const daysToSaturday = dayOfWeek === 6 ? 0 : (dayOfWeek + 1);
+
+    // Calculate start of the week (Saturday)
+    const startOfWeek = new Date(inputDate);
+    startOfWeek.setDate(inputDate.getDate() - daysToSaturday);
+
+    // Calculate end of the week (Friday)
+    const endOfWeek = new Date(startOfWeek);
+    endOfWeek.setDate(startOfWeek.getDate() + 6);
+
+    return {
+        startOfWeek: startOfWeek.toLocaleDateString().split('T')[0], // Format: YYYY-MM-DD
+        endOfWeek: endOfWeek.toLocaleDateString().split('T')[0],     // Format: YYYY-MM-DD
+    };
+}
