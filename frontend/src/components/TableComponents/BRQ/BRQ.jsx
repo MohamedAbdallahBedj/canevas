@@ -6,7 +6,11 @@ import localizationFR from "../../../json/localizationFR.json";
 import localizationAR from "../../../json/localizationAR.json";
 import { toast } from "react-toastify";
 import excel from "../../../exports/excel";
-import { getWeekStartAndEnd, hasNullableValues, isObjectContained } from "../../../exports/divers";
+import {
+  getWeekStartAndEnd,
+  hasNullableValues,
+  isObjectContained,
+} from "../../../exports/divers";
 import { TableCell, TableHead, TableRow } from "@mui/material";
 
 const BRQ = ({
@@ -119,14 +123,14 @@ const BRQ = ({
     {
       ...baseColumn,
       field: "date_debut",
-      title: t("Date Debut Semaine"),
+      title: t("Du"),
       editable: "never",
       render: ({ date }) => getWeekStartAndEnd(date).startOfWeek,
     },
     {
       ...baseColumn,
       field: "date_fin",
-      title: t("Date Fin Semaine"),
+      title: t("Au"),
       editable: "never",
       render: ({ date }) => getWeekStartAndEnd(date).endOfWeek,
     },
@@ -191,7 +195,9 @@ const BRQ = ({
   if (id !== 59)
     columns = columns.filter((column) => column.field !== "idWilaya");
   if (category !== 1)
-    columns = columns.filter((column) => column.field !== "date_debut" && column.field !== "date_fin");
+    columns = columns.filter(
+      (column) => column.field !== "date_debut" && column.field !== "date_fin"
+    );
 
   const CustomHeader = (props) => {
     let tableCells = [
@@ -263,6 +269,9 @@ const BRQ = ({
                     (parseFloat(row.minGros) + parseFloat(row.maxGros)) / 2,
                   pmpDetail:
                     (parseFloat(row.minDetail) + parseFloat(row.maxDetail)) / 2,
+                  date_debut: getWeekStartAndEnd(row.date).startOfWeek,
+                  date_fin: getWeekStartAndEnd(row.date).endOfWeek,
+                  date: new Date(row.date).toLocaleDateString()
                 }));
 
                 excel(

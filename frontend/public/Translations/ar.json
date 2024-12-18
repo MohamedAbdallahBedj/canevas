@@ -1050,5 +1050,9 @@
   "Nouveau mot de passe": "كلمة المرور الجديدة",
   "Ré-entrez le nouveau mot de passe": "أعد إدخال كلمة المرور الجديدة",
   "Afin de renforcer la sécurité de votre compte utilisateur. Vous pouvez maintenant modifier votre mot de passe.": "بهدف تعزيز أمان حساب المستخدم الخاص بكم. يمكنكم الآن تغيير كلمة المرور الخاصة بكم ",
-  " en cliquant ici": "بالضغط هنا"
+  " en cliquant ici": "بالضغط هنا",
+  "Du":"من",
+  "Au":"إلى"
+  
+
 }

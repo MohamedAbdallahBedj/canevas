@@ -51,7 +51,7 @@ export const getWeekStartAndEnd = (date) => {
     endOfWeek.setDate(startOfWeek.getDate() + 6);
 
     return {
-        startOfWeek: startOfWeek.toLocaleDateString().split('T')[0], // Format: YYYY-MM-DD
-        endOfWeek: endOfWeek.toLocaleDateString().split('T')[0],     // Format: YYYY-MM-DD
+        startOfWeek: startOfWeek.toLocaleDateString(), // Format: YYYY-MM-DD
+        endOfWeek: endOfWeek.toLocaleDateString(),     // Format: YYYY-MM-DD
     };
 }
