@@ -205,6 +205,8 @@ const BRQ = ({
       { text: "", sx: {}, colSpan: 1 },
       { text: "", sx: {}, colSpan: 1 },
       { text: "", sx: {}, colSpan: 1 },
+      { text: "", sx: {}, colSpan: 1 },
+      { text: "", sx: {}, colSpan: 1 },
       {
         text: t("Prix de gros"),
         sx: { textAlign: "center", backgroundColor: "#d3d3d3" },
@@ -220,6 +222,10 @@ const BRQ = ({
     ];
     if (id !== 59) tableCells.shift();
     else tableCells.pop();
+    if (category !== 1) {
+      tableCells.shift();
+      tableCells.shift();
+    }
     return (
       <>
         <TableHead>
@@ -271,7 +277,7 @@ const BRQ = ({
                     (parseFloat(row.minDetail) + parseFloat(row.maxDetail)) / 2,
                   date_debut: getWeekStartAndEnd(row.date).startOfWeek,
                   date_fin: getWeekStartAndEnd(row.date).endOfWeek,
-                  date: new Date(row.date).toLocaleDateString()
+                  date: new Date(row.date).toLocaleDateString(),
                 }));
 
                 excel(
@@ -292,6 +298,8 @@ const BRQ = ({
                     const {
                       pmpGros,
                       pmpDetail,
+                      date_debut,
+                      date_fin,
                       date: __date,
                       ...rest
                     } = newData;
@@ -339,6 +347,8 @@ const BRQ = ({
                     const {
                       pmpGros,
                       pmpDetail,
+                      date_debut,
+                      date_fin,
                       date: __date,
                       ...rest
                     } = newData;
