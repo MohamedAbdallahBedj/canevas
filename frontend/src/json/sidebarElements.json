@@ -146,7 +146,7 @@
   },
   {
     "textFr": "Chambres froides",
-    "textAr": "غرف باردة",
+    "textAr": "غرف تبريد",
     "url": "/chambres-froides-DPV",
     "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPV"]
   },
@@ -183,7 +183,7 @@
   },
   {
     "textFr": "Chambres Froides d'Origine Animale",
-    "textAr": "غرف باردة ذات أصل حيواني",
+    "textAr": "غرف تبريد ذات أصل حيواني",
     "url": "/chambres-froides-origine-animale",
     "access": ["UtilisateurTechnique", "AdminGenerale", "AdminPA"]
   },
