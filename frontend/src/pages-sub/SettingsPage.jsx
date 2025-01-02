@@ -5,8 +5,8 @@ import Loading from "../components/Loading/Loading";
 import { Box, Tab, Tabs } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import AuthContext from "../context/AuthContext";
-import AccountManagementPage from "../components/AccountManagement/AccountManagementPage";
-import LoginHistoryPage from "../components/LoginHistory/LoginHistoryPage";
+import AccountManagementPage from "./AccountManagementPage";
+import LoginHistoryPage from "./LoginHistoryPage";
 const tabs = [
   {
     value: 0,
