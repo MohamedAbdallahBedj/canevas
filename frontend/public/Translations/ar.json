@@ -1052,7 +1052,9 @@
   "Afin de renforcer la sécurité de votre compte utilisateur. Vous pouvez maintenant modifier votre mot de passe.": "بهدف تعزيز أمان حساب المستخدم الخاص بكم. يمكنكم الآن تغيير كلمة المرور الخاصة بكم ",
   " en cliquant ici": "بالضغط هنا",
   "Du":"من",
-  "Au":"إلى"
+  "Au":"إلى",
+  "Outil de gestion des comptes": "أداة إدارة الحسابات",
+  "Type de compte": "نوع الحساب"
   
 
 }

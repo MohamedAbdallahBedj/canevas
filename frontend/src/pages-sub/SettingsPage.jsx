@@ -5,6 +5,8 @@ import Loading from "../components/Loading/Loading";
 import { Box, Tab, Tabs } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import AuthContext from "../context/AuthContext";
+import AccountManagementPage from "../components/AccountManagement/AccountManagementPage";
+import LoginHistoryPage from "../components/LoginHistory/LoginHistoryPage";
 const tabs = [
   {
     value: 0,
@@ -28,6 +30,16 @@ const tabs = [
   {
     value: 1,
     label: "Ajouter un compte",
+    roles: ["AdminGenerale"],
+  },
+  {
+    value: 2,
+    label: "Outil de gestion des comptes",
+    roles: ["AdminGenerale"],
+  },
+  {
+    value: 3,
+    label: "Historique d'utilisation",
     roles: ["AdminGenerale"],
   },
 ];
@@ -62,6 +74,8 @@ const SettingsPage = () => {
       </Box>
       {value === 0 ? <EditPassword /> : <></>}
       {value === 1 ? <NewAccount /> : <></>}
+      {value === 2 ? <AccountManagementPage /> : <></>}
+      {value === 3 ? <LoginHistoryPage /> : <></>}
     </>
   );
 };
