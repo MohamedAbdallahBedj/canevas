@@ -24,7 +24,7 @@ const ActivitesPages = ({ campagnes }) => {
   const [wilaya2, setWilaya2] = React.useState(id);
 
   var searchParams1 = {
-    table: "bilanActivite",
+    table: "planAction",
     annee: campagne,
   };
   const data1 = useFetch(
@@ -36,7 +36,7 @@ const ActivitesPages = ({ campagnes }) => {
   );
 
   var searchParams2 = {
-    table: "planAction",
+    table: "bilanActivite",
     annee: campagne2,
   };
   const data2 = useFetch(
@@ -77,9 +77,9 @@ const ActivitesPages = ({ campagnes }) => {
       </Stack>
       <PlanAction
         campagne={campagne}
-        data={data2?.data}
-        refetch={data2?.refetch}
-        loading={data2?.loading}
+        data={data1?.data}
+        refetch={data1?.refetch}
+        loading={data1?.loading}
       />
       <Divider sx={{ marginBlock: 5 }} />
       <Stack direction="row" marginBlock={1}>
@@ -108,9 +108,9 @@ const ActivitesPages = ({ campagnes }) => {
       </Stack>
       <BilanActivites
         campagne={campagne2}
-        data={data1?.data}
-        refetch={data1?.refetch}
-        loading={data1?.loading}
+        data={data2?.data}
+        refetch={data2?.refetch}
+        loading={data2?.loading}
       />
     </Box>
   );

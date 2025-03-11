@@ -35,6 +35,9 @@ app.use(session({
     }
 }))
 
+// Trust Nginx as a proxy
+app.set('trust proxy', true);
+
 app.use("/api/uploads", express.static(__dirname + '/uploads'));
 app.use("/api/params", require("./routes/params"));
 app.use("/api/auth", require("./routes/auth"));

@@ -152,7 +152,7 @@ router.get("/accounts", isAuthorized, checkRole("AdminGenerale"), async (req, re
     if (wilaya) {
       filters.push(`"idWilaya" = ${wilaya}`);
     }
-    
+
     // Add filters to the query if applicable
     if (filters.length > 0) {
       queryTxt += ` WHERE ${filters.join(' AND ')}`;
@@ -177,23 +177,23 @@ router.get("/accounts", isAuthorized, checkRole("AdminGenerale"), async (req, re
 
 router.delete("/delete/:nomUtilisateur", checkRole("AdminGenerale"), isAuthorized, async (req, res) => {
   try {
-      const { nomUtilisateur } = req.params;
-      // if (!(tablename)) return res.status(403).send("Tableau non trouvé!");
-      // Constructing the SQL delete query dynamically based on the provided tablename
-      let deleteQuery = `DELETE FROM "login" WHERE "nomUtilisateur" = $1;`;
+    const { nomUtilisateur } = req.params;
+    // if (!(tablename)) return res.status(403).send("Tableau non trouvé!");
+    // Constructing the SQL delete query dynamically based on the provided tablename
+    let deleteQuery = `DELETE FROM "login" WHERE "nomUtilisateur" = $1;`;
 
-      // Executing the SQL query
-      const row = await pool.query(deleteQuery, [nomUtilisateur]);
-      res.json(row.rowCount);
+    // Executing the SQL query
+    const row = await pool.query(deleteQuery, [nomUtilisateur]);
+    res.json(row.rowCount);
   } catch (err) {
-      console.error('Time: ' + new Date().toLocaleString());
-      console.error('User: ' + JSON.stringify(req.nomUtilisateur));
-      console.error('Route: ' + req.originalUrl);
-      console.error('Error Content: ' + err.message);
-      console.error("---------------------------------------------------------------");
-      res.status(500).send("Server error");
-  }finally{
-      }
+    console.error('Time: ' + new Date().toLocaleString());
+    console.error('User: ' + JSON.stringify(req.nomUtilisateur));
+    console.error('Route: ' + req.originalUrl);
+    console.error('Error Content: ' + err.message);
+    console.error("---------------------------------------------------------------");
+    res.status(500).send("Server error");
+  } finally {
+  }
 });
 
 

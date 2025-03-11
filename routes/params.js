@@ -7,9 +7,10 @@ const { isAuthorized } = require("../middleware/authMiddleware");
 router.get("/years", isAuthorized, async (req, res) => {
 
     try {
+
         const data = {
-            campagnes: [2021, 2022, 2023],
-            years: [2021, 2022, 2023, 2024],
+            campagnes: [2021, 2022, 2023, 2024],
+            years: [2021, 2022, 2023, 2024, 2025],
             pap: [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
         }
         res.status(200).send(data);
